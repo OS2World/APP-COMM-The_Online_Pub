@@ -1,0 +1,26 @@
+                          Chart of PubColour(TM) Codes
++------+-------------------------------+------+-------------------------------+
+| Code | Foreground Colour (Lowercase) | Code | Background Colour (Uppercase) |
++------+-------------------------------+------+-------------------------------+
+|  ^a  | Black                         |  ^A  | Black                         |
+|  ^b  | Blue                          |  ^B  | Blue                          |
+|  ^c  | Green                         |  ^C  | Green                         |
+|  ^d  | Cyan                          |  ^D  | Cyan                          |
+|  ^e  | Red                           |  ^E  | Red                           |
+|  ^f  | Magenta                       |  ^F  | Magenta                       |
+|  ^g  | Brown                         |  ^G  | Brown                         |
+|  ^h  | Light Grey                    |  ^H  | Grey                          |
+|  ^i  | Dark Grey                     |  ^I  | Black (with Flashing Text)    |
+|  ^j  | Light Blue                    |  ^J  | Blue (with Flashing Text)     |
+|  ^k  | Light Green                   |  ^K  | Green (with Flashing Text)    |
+|  ^l  | Light Cyan                    |  ^L  | Cyan (with Flashing Text)     |
+|  ^m  | Light Red                     |  ^M  | Red (with Flashing Text)      |
+|  ^n  | Light Magenta                 |  ^N  | Magenta (with Flashing Text)  |
+|  ^o  | Yellow                        |  ^O  | Brown (with Flashing Text)    |
+|  ^p  | White                         |  ^P  | Grey (with Flashing Text)     |
++------+-------------------------------+------+-------------------------------+
+|  ^^  | Displays a single ^ (caret) character.                               |
++------+----------------------------------------------------------------------+
+| NOTE:  On some systems, backgrounds with flashing text may appear as        |
+| high-intensity colour backgrounds without flashing text instead.            |
++-----------------------------------------------------------------------------+

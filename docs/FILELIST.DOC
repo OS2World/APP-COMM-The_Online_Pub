@@ -1,0 +1,52 @@
+List of Files in the TOP Distribution Archive
+---------------------------------------------
+
+    TOP.EXE         The executable program (TOP for DOS only).
+    TOP2.EXE        The executable program (TOP for OS/2 only).
+    TOPACT.EXE      The TOP Action Compiler for DOS (TOP/DOS and TOP/95 only).
+    TOPACT2.EXE     The TOP Action Compiler for OS/2 (TOP/2 only).
+    2G1TO200.EXE    Upgrade program for TOP v2.00g1 and RAP v1.82/v1.82a.
+    DRS2V5B3.DLL    The Doors/2 DLL (TOP for OS/2 only).
+    ODOORS60.DLL    The OpenDoors DLL (TOP for Win95 only).
+
+    TOP.DOC         \
+    RAPUPGR.DOC      \
+    WHATSNEW.DOC      \
+    LICENCE.DOC        \
+    REGISTER.DOC       /  Documentation and information files.
+    PUBCOLOR.DOC      /
+    FILELIST.DOC     /
+    EXTFILES.DOC    /
+    MAXOS2V3.DOC    Info. on TOP's Maximus/2 v3.0x support (TOP for OS/2 only).
+    TOPWIN95.DOC    Info. on setup & features of TOP for Win95.  (TOP/95 only).
+
+    REGISTER.FRM    \ Registration forms.
+    UPGRADE.FRM     /
+
+    TOP.CFG         \
+    NODES.CFG        \
+    CHANNELS.CFG      > Sample configuration files.
+    BIOQUES.CFG      /
+    CENSOR.CFG      /
+
+    SAMPLE.BAT      Sample batch file.
+
+    GENERIC.LNG     \
+    PUB.LNG          > Sample language files.
+    STTNG.LNG       /
+
+    MAIN.ACT        \ Sample Action List Files.
+    SYSOP.ACT       /
+
+    MAIN.TAC        \ Compiled copies of the Sample Action List files.
+    SYSOP.TAC       /
+
+    __ACTHDR.TXT    Header file to aid upgrading of RAP action files.
+
+    ALLANSI.DOC     Archive containing _all_ ANSI (external) files for TOP.
+
+    FILE_ID.DIZ     Description of the archive, used by BBS software.
+
+    If your copy of TOP is missing any of these files (except those not needed
+by the version of TOP you have, such as DRS2V5B3.DLL), please contact the
+author to get a complete copy.

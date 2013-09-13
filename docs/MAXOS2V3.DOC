@@ -1,0 +1,45 @@
+Important Information About TOP/2's Maximus/2 v3.0x Support
+-----------------------------------------------------------
+
+    TOP/2 now features support for Maximus/2 v3.0x.  Implementing this support
+was the primary reason that TOP v2.00 was delayed for several months, as there
+were a number of problems introduced by what the author considers to be
+shortcomings in Maximus/2's design.   Most of these problems have now been
+overcome, however there are a few things you must be aware of if you are going
+to use TOP/2's Maximus/2 v3.0x support.  These things are detailed below.
+
+    - Users in Maximus/2 will see each user who is in TOP _TWICE_ when a "Who's
+On" command is issued.  This is an unavoidable consequence of Maximus/2's
+design.  Maximus/2 does not disconnect itself from the MCP when spawning doors,
+nor does it provide a means to tell it to do so.  As a result, users will show
+up twice in a Maximus/2 Who's Online list (once from Maximus/2, and once from
+TOP/2).  Fortunately, the status on both of these nodes should appear the same,
+thus users shouldn't be confused as to where a user actually is.  The user will
+just appear twice.
+
+    - As a result of the above, all messages are sent to nodes in TOP/2 twice.
+TOP/2 will attempt to detect the duplicate message and filter it out, however
+this may not be 100% reliable in cases where several messages have been sent to
+a node at once.
+
+    - The rest of TOP's Max/2 support should be solid.  Sending messages to
+nodes from inside TOP (with the PAGE command) appears to be stable, and issuing
+a NODES command in TOP/2 will correctly display each node's status.  The NODES
+command does not suffer the same problems as Max/2's Who's Online command, in
+that a NODES command will only show each node once.
+
+    - To enable Maximus/2 v3.0x support, set the BBSType setting in TOP.CFG to
+"MAX3" (without the quotes).  Then set the BBSIPCPath setting so it matches the
+"MCP Pipe" setting in MAX.CTL.  Normally, this will be "\pipe\maximus\mcp".
+
+    - If you are using Maximus/2 v2.0x, or if you have third-party programs or
+MEX scripts that implement IPC files with Maximus/2 v3.0x, set the BBSType
+keyword to "MAX2".  No further support for IPC files with Max/2 v3.0x is
+provided, and the author cannot assist people with using IPC files in Max/2
+v3.0x, as he does not have any experience in this field.
+
+    - Please do not disturb the author of TOP/2 with requests to fix the
+problems mentioned above, as his hands are tied.  The problems are related to
+how Maximus/2 is designed, and until that design is changed or expanded, this
+is the best the author can do.
+

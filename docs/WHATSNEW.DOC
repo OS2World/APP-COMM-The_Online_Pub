@@ -1,0 +1,89 @@
+The Online Pub v2.00 - What's New?
+------------------------------------
+
+    This file contains short one-liners that detail the changes made in the
+various versions of TOP.  The changes are grouped by version with the newest
+version first.  Inside each section, the changes are listed in the order they
+were made.
+
+    The symbol beside each line denotes the type of change, as listed below:
+
+    + Indicates addition of a feature.
+    - Indicates deletion of a feature.
+    * Indicates a general change to the program.
+    ! Indicates a bug fix.
+
+-------------------------------------------------------------------------------
+Version 2.00
+
+    + DOS version features a full-screen page editor for RA/SBBS.
+    ! Fixed bug with the AllowHandles keyword not working correctly.
+    + UseRTSCTS keyword added to NODES.CFG.
+    + Added a six level, totally configurable profanity censor!
+    + The default user preferences are now configurable in TOP.CFG.
+    + User biography (BIO command) added!  Supports 100 configurable questions.
+    * LOOKUP command now displays a user's biography.
+    * User name searching when TOP loads has been sped up.
+    + Maximus/2 v3.0x support added to TOP/2.  Please see MAXOS2V3.DOC.
+    * TOP now uses a one-line page editor for Maximus systems.
+    + A configurable action prefix has been added (eg. ".slap", ".kick").
+    ! TOP for OS/2 now properly cleans up after abrupt exits (DCD drops, etc.).
+    + @, ^, and % token processing can now be disabled in configurable areas.
+    + USERLIST command added to display a list of user names.
+    - "Press any key" prompts that are no longer needed have been removed.
+    ! Fixed various bugs related to Conferences; they should work properly now.
+    ! TOP no longer wrongly shows channels as Unlisted in certain situations.
+    - References to a user's Description have been removed (obsoleted by BIO).
+    * Warnings such as time limit and inactivity messages now display cleanly.
+    ! Rewrote user name parser to correct problems with similarly named users.
+    * %P token is now filtered out of personal actions (caused crashes).
+    * Revised errorlevels (also TOP.DOC lists them, which was omitted before).
+    * %M token is now MANDATORY in all personal action singular & plural texts.
+    + Name processor is now more sensitive to errors.
+    ! Certain MECCA codes in Maximus pages are now processed correctly.
+    + TOP/DOS now auto-detects SHARE support and will not run if not found.
+    * PAGE now can accept a node number, or a node and a message, to save time.
+    ! Problems with page acknowledgement/error messages have been corrected.
+
+-------------------------------------------------------------------------------
+Version 2.00g1 (changes from The RemoteAccess Pub v1.82a)
+
+    * Changed name of program (obviously).
+    * Changed RAPColour code style to PubColour codes, which are easier to use.
+    + Support for a Language File allowing all text and colours to be changed.   -
+    + Added a Configuration File system allowing many settings to be changed.
+    + Added a Node Configuration File, allowing easy setup of each node.
+    - Removed annoying 5 parameter command line, now only one param. is used.
+    + Added multi-channel support for over four BILLION channels!
+    * Made WHO/SCAN more like Major BBS.
+    * Hitting ENTER now redisplays the short list of "Who's in" handles.
+    + Added Crash Protection.
+    ! Fixed output slowness bug.
+    + Added support for more than 255 nodes (up to 32767 now).
+    * Preference Options now available to ALL systems, not just registered.
+    - Removed pointless 2 second delay after "Setting up" message.
+    * New, more generic BBS interface.
+    + Added support for SuperBBS v1.1x.
+    + Directed messages added.
+    ! Fixed TOP so it uses the right path for BBS communications.
+    + Added Channel & Conference Definitions, configurable by CHANNELS.TOP.
+    ! Fixed some problems with the output routines.
+    ! Fixed SEVERE bug that could have blocked out the user searching.
+    + Native OS/2 version now available!
+    + Multiple action lists and security/channel limitations now available!
+    ! Fixed TOP's shell to DOS ability (finally)!
+    * Redid the command processor.
+    + Messages can now be received while typing, if the user wishes.
+    + DUAL WINDOW CHAT MODE (input/output) now available!
+    + Totally new, command-oriented help system implemented!
+    + Several options added to the CHANGE command and the Profile Editor.
+    + Added internal security level system.
+    + Added CHAT command to engage one-on-one Private Chats!
+    + Added /LOGOFF command for users to safely logoff from inside TOP.
+    + Added RA Credit System support.
+    + Added "he"/"she" token for actions (%E).
+    + Actions can now display external picture files (%P token)!
+    ! Fixed infamous "midnight message-block" bug.
+    + Added personal channels for each user.
+    + Added moderator commands.
+

@@ -1,0 +1,240 @@
+The Online v2.00 - Licence Information
+--------------------------------------
+
+    NOTE TO FORMER RA PUB USERS:  This licence has changed from the RA Pub
+licence.  Please read this new licence, as it supersedes the previous one.
+This licence also replaces the files SYSOP.DOC and VENDOR.DOC that were
+included with RA Pub.
+
+    This licence supersedes the licence for all previous versions of TOP.
+
+DISCLAIMER OF WARRANTY
+----------------------
+
+    THE ONLINE PUB (TOP) IS PROVIDED "AS IS", WITH NO WARRANTIES.  THE USAGE OF
+THIS SOFTWARE IS AT YOUR OWN RISK.  THE AUTHOR CANNOT BE HELD LIABLE FOR ANY
+DATA DAMAGE, DATA LOSS, OR PERSONAL INJURY THAT OCCURS AS A DIRECT OR INDIRECT
+RESULT OF USING TOP.
+
+    Every attempt has been made to assure that TOP will work without error,
+but, as is the nature of the computing world, unexpected results can happen.
+You should be sure to test TOP in an isolated environment with non-critical
+data before committing TOP to your system.  Always keep backups!
+
+    The author is not obligated in any way to continue providing support for
+this version of TOP.  The author is also not obligated to produce future
+versions of TOP.
+
+COPYRIGHT AND TRADEMARK ACKNOWLEDGEMENTS
+----------------------------------------
+
+    The Online Pub is the sole property of the author, Paul Sidorsky.  The
+author reserves all rights to the program.  PubColour is a trademark of Paul
+Sidorsky.  ISMWare is a trademark of Paul Sidorsky.
+
+    All other trademarks referred to by TOP's programs and/or documentation are
+for reference only, and are the property of their respective holders.
+
+    UNDER NO CIRCUMSTANCES MAY TOP OR ANY OF ITS TECHNOLOGIES BE COPIED OR
+REVERSE ENGINEERED.
+
+DISTRIBUTION INFORMATION
+------------------------
+
+    YOU ARE ENCOURAGED TO DISTRIBUTE THE ONLINE PUB (TOP) FREELY AS LONG AS
+NONE OF THE FILES CONTAINED IN THE DISTRIBUTION ARCHIVE(S) AND/OR UPGRADE
+ARCHIVE(S) HAVE BEEN ADDED, DELETED, OR MODIFIED IN ANY WAY.
+
+    The term "Distribution Archive" refers to the compressed file that contains
+all of the files needed by TOP and anybody running it.  It is not permitted to
+distribute these files seperately, with the exception of action list files
+(.ACT files) and language file (.LNG files).  These files may be distributed
+seperately according to the same terms outlined in this section.
+
+    The term "Upgrade Archive" refers to the compressed file that contains all
+of the files needed to upgrade from a previous version of TOP to this one.  The
+same restrictions that apply to Distribution Archives apply to Upgrade
+Archives.
+
+    _UNDER_NO_CIRCUMSTANCES_ SHOULD TOP REGISTRATION KEYS BE DISTRIBUTED IN ANY
+WAY!  DOING SO IS A DIRECT VIOLATION OF YOUR LICENCE TO RUN AND DISTRIBUTE TOP!
+
+    BBS Operators
+    -------------
+
+    BULLETIN BOARD SYSTEM OPERATORS (SYSOPS) ARE GRANTED PERMISSION TO
+DISTRIBUTE THE ONLINE PUB (TOP) PROVIDING THAT _ALL_ OF THE FOLLOWING
+CONDITIONS ARE MET WITH:
+
+(1) NO FILES MAY BE ADDED TO THE DISTRIBUTION OR UPGRADE ARCHIVE(S).  This
+    includes BBS advertisements, "advice" notes, etc.  However, you are
+    permitted to include an archive comment that advertises your BBS.  If your
+    copy of TOP contains files OTHER than those listed in FILELIST.DOC, you
+    must delete them before making TOP available for download.
+
+(2) NO FILES MAY BE REMOVED FROM THE DISTRIBUTION OR UPGRADE ARCHIVE(S).  If
+    your copy of TOP does not include ALL of the files listed in FILELIST.DOC,
+    you should contact the author or one of the TOP support BBSs for a complete
+    version.
+
+(3) NONE OF THE FILES IN THE DISTRIBUTION OR UPGRADE ARCHIVE(S) MAY BE MODIFIED
+    IN ANY WAY.  The sizes, dates, and times of the files MUST match the ones
+    in the author's original Distribution or Upgrade Archive.  The content of
+    the files in the TOP Distribution or Upgrade Archive must also not be
+    altered.  If you suspect some of the files in your copy of TOP have been
+    tampered with, contact the author to verify that your copy of TOP is
+    legitimate.
+
+(4) YOUR BBS IS NOT USED TO CONDUCT OR PROMOTE ILLEGAL ACTIVIES such as, but
+    not limited to, software piracy, the distribution of "adult" material to
+    under-age persons, the distribution of other illegal files, or for
+    illegitimate or illegal business practices.  If your BBS is used by
+    international callers, the laws of the country or countries where these
+    caller(s) are located must also be respected.
+
+(5) NO FEE IS LEVIED AGAINST YOUR USERS FOR THE PRIVILAGE OF DOWNLOADING TOP.
+    You may charge normal connect time fees if applicable, but you must make
+    sure that TOP is available to all users that have paid the basic membership
+    fee for your BBS.
+
+(6) UNDER NO CIRCUMSTANCES CAN REGISTRATION KEY(S) FOR TOP BE MADE AVAILABLE
+    FOR DOWNLOAD.
+
+    YOU ARE GRANTED PERMISSION TO CHANGE THE ARCHIVE FORMAT AND FILE NAME OF
+THE DISTRIBUTION AND/OR UPGRADE ARCHIVE(S) PROVIDING THAT YOU MEET WITH _ALL_
+OF THE FOLLOWING CONDITIONS:
+
+(7) YOU DO NOT VIOLATE ANY OF THE CONDITIONS LISTED ABOVE IN DOING SO.
+
+(8) YOU KEEP THE SAME BASE FILE NAME FOR THE TOP DISTRIBUTION ARCHIVE.  All
+    Distribution Archives of TOP are named using the format TOPvxyy.zzz, where
+    v refers to the operating system version of TOP (D for TOP for DOS, O for
+    TOP for OS/2, W for Win95), x refers to the major version number of TOP
+    (the number to the left of the period), yy refers to the minor version
+    number of TOP (the number to the right of the period), and zzz refers to
+    the compression type of the Distribution Archive (ARJ, RAR, ZIP, etc.).
+    Beta and Gamma versions of TOP have the letter B or G, respectively,
+    followed by a beta or gamma release number (for example, 1) instead of the
+    minor version number. You are only permitted to change the zzz part of the
+    Distribution Archive Name; the rest must stay the same.  This version of
+    TOP is distributed by the author with the file names of TOPD200.ARJ,
+    TOPO200.ARJ, and TOPW200.ARJ.
+
+(9) YOU KEEP THE SAME BASE FILE NAME FOR THE TOP UPGRADE ARCHIVE.  All Upgrade
+    Archives of TOP are named using the format TOPvUxyy.zzz , where v, x, yy,
+    and zzz refer to the same components as described in condition (8).  U
+    stands for Upgrade.  You are only permitted to change the zzz part of the
+    Upgrade Archive Name; the rest must stay the same.  The upgrades to this
+    version of TOP are distributed by the author with the file names of
+    TOPDU200.ARJ, TOPOU200.ARJ, and TOPWU200.ARJ.
+
+(10)YOU DO NOT VIOLATE _ANY_ OF THE CONDITIONS OF THE LICENCE OF THE
+    COMPRESSION OR ARCHIVING PROGRAM USED TO REARCHIVE TOP.
+
+    CD-ROM and Shareware Disk Publishers
+    ------------------------------------
+
+    CD-ROM PUBLISHERS AND SHAREWARE DISK VENDORS ARE GRANTED PERMISSION TO
+DISTRIBUTE THE ONLINE PUB (TOP) PROVIDING THAT _ALL_ OF THE FOLLOWING
+CONDITIONS ARE MET WITH:
+
+(1) ALL CONDITIONS OUTLINED ABOVE, EXCEPT (4) AND (5) (WHICH ONLY APPLY TO BBS
+    SYSTEMS), MUST BE MET WITH IN ADDITION TO THE CONDITIONS OUTLINED IN THIS
+    SECTION.
+
+(2) THE AUTHOR MUST BE NOTIFIED PRIOR TO THE PUBLICATION AND RELEASE OF THE
+    CD-ROM/DISK CONTAINING TOP.  To do this, contact the author electronically
+    using one of the methods listed in TOP.DOC.  Provide the name of the CD-ROM
+    or disk, publisher, retail cost of the disk, and version of TOP that is to
+    be distributed.  Upon acknowledgement of your notification, permission is
+    given to distribute TOP, unless said permission is declined in the
+    acknowledgement.
+
+(3) THE VERSION OF TOP BEING DISTRIBUTED MUST BE THE LATEST VERSION.  The
+    author will provide you with the latest version upon notification if the
+    version you have is not already the latest.
+
+(4) NO FEE MAY BE CHARGED SPECIFICALLY FOR THE TOP DISTRIBUTION AND/OR UPGRADE
+    ARCHIVE(S).  You may charge normal overhead fees to cover publishing,
+    advertisements, duplication, and associated labour, but the inclusion of
+    TOP must not add to the cost of the CD-ROM or disk.
+
+(5) CUSTOMERS ARE CLEARLY INFORMED THAT THE CD-ROM/DISK THEY HAVE PURCHASED
+    CONTAINS _UNREGISTERED_SHAREWARE_ THAT REQUIRES A SEPERATE PAYMENT TO THE
+    AUTHOR AFTER A TRIAL PERIOD.
+
+(6) UNDER NO CIRCUMSTANCES CAN THE CD-ROM/DISK INCLUDE REGISTRATION KEY(S) FOR
+    TOP.
+
+    If you have any inquiries about these conditions, or any other aspect of
+TOP, please contact the author using one of the means described at the end of
+TOP.DOC.
+
+TRIAL PERIOD LICENCE
+--------------------
+
+    YOU ARE GRANTED THE RIGHT TO USE THE ONLINE PUB (TOP) FOR A MAXIMUM OF
+SIXTY (60) DAYS SUBJECT TO THE FOLLOWING TERMS:
+
+(1) THE SYSTEM(S) YOU ARE USING TOP ON ARE NOT USED FOR ANY ILLEGAL PURPOSES.
+
+(2) AT THE END OF THE SIXTY (60) DAY TRIAL PERIOD, YOU _MUST_ REGISTER YOUR
+    COPY OF TOP WITH THE AUTHOR IF YOU WISH TO CONTINUE USING TOP.  OTHERWISE,
+    YOU MUST DELETE ALL WORKING COPIES OF TOP FROM YOUR SYSTEM(S).  You may
+    continue to distribute unregistered copies of TOP for as long as you like
+    (subject to the conditions above), but if you are using TOP on your system,
+    you must either register or stop using it after the trial period has
+    expired.  Registration information is given in the file REGISTER.DOC.
+
+(3) YOU OR YOUR COMPANY MAY NOT PROFIT FROM ALLOWING PEOPLE TO USE TOP.  If you
+    run a "pay" BBS, you may charge your standard membership fees so long as no
+    additional fees are charged to use TOP.
+
+(4) YOU MUST NOT VIOLATE ANY OF THE DISTRIBUTION CONDITIONS DESCRIBED ABOVE.
+
+REGISTERED USER LICENCE
+-----------------------
+
+    Once you have completed your TOP Registration form and submitted it, along
+with full payment, you will be issued a TOP Registration Key.  Possession of
+this Registration Key qualifies you as a Registered User of TOP, subject to the
+terms of this licence.
+
+    You will actually receive two keys when you register, but because both keys
+make up one registration, they are treated as a single key everywhere in this
+document, except in this paragraph, which describes the differences in keys.
+One key works with the DOS version of TOP, and one key works with the OS/2
+version of TOP.  However, ONLY ONE KEY OR THE OTHER MAY BE IN USE AT ANY ONE
+TIME!  You may not give out the key for the version you are not using or use it
+on a second BBS that you may happen to be involved with.  Both keys are for
+YOUR USE ONLY ON THE SYSTEM NAMED WHEN TOP WAS REGISTERED.  Both keys are also
+each protected by the conditions described below.
+
+    UPON RECEPTION OF YOUR ONLINE PUB (TOP) REGISTRATION KEY, YOU ARE PERMITTED
+TO INSTALL THE REGISTERED VERSION OF TOP ON ONE (1) HARD DRIVE, PROVIDED YOU
+COMPLY WITH THE CONDITIONS DESCRIBED BELOW.  CONDITION NUMBERS (1), (3), AND
+(4) AS DESCRIBED IN THE TRIAL PERIOD LICENCE AGREEMENT ALSO APPLY TO THIS
+LICENCE.
+
+    A "Registered Version of TOP" is defined as a copy of TOP.EXE, TOP2.EXE,
+TOPW.EXE, or TOP86.EXE that has access to a valid TOP Registration Key.  When
+this is the case, TOP will identify itself as a Registered Version of TOP upon
+entering the program.
+
+    If you run a multi-node BBS, then all of the lines that use the Registered
+Version of TOP must share the same hard drive, and only one (1) hard drive may
+contain your TOP registration key.  If you run a LAN, then only one server may
+contain the TOP registration key.
+
+    You are permitted to make as many backups of the registration keys as you
+wish, provided that a) the backups are not given out in any way, b) the
+backups are not being used in conjunction with other copies of TOP, and c) the
+backups are protected as other personal artifacts are, i.e. they are not
+carelessly left around for other people to steal or copy.
+
+    DISTRIBUTION OF A TOP REGISTRATION KEY IN ANY WAY IS A DIRECT VIOLATION OF
+THIS LICENCE!
+
+    Instructions on how to register TOP and thus qualify for this part of the
+licence are given in the file REGISTER.DOC.
+

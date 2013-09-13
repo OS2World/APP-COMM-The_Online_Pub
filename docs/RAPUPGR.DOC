@@ -1,0 +1,113 @@
+How to Upgrade RAP v1.82/v1.82a to TOP v2.00
+--------------------------------------------
+
+    This file describers how to upgrade The RemoteAccess Pub v1.82 or v1.82a to
+The Online Pub v2.00.  Users upgrading from TOP v2.00g1 should obtain the
+uprade package of TOP from the author's BBS instead.
+
+    If you have not changed your action file, and do not want to keep your old
+RAP user file, you can delete RAP completely and follow the new installation
+instructions in TOP.DOC.
+
+    It is important that you follow EACH instruction in order to complete the
+upgrade successully!  NOTE:  If you are planning to use the OS/2 version of
+TOP, these instructions still apply!  The OS/2 version is completely compatible
+with the DOS version, so you can still use your old files!
+
+    1) Backup RAP.KEY (if you're registered), USERS.RAP and ACTIONS.RAP.  Make
+sure you've got an archived copy of RAP 1.82/1.82a around, just in case the
+gamma proves problematic.
+
+    2) Delete NODE????.RAP, MIDX???.RAP, and CHGIDX.RAP from your RAP Work
+Path.  You can run DELTEMP.BAT from RAP 1.82/1.82a to do this.
+
+*** At this point you are advised to DELETE your RAP directory, create a new
+TOP directory, and unpack the beta version into this directory.  A lot of files
+used by RAP have either been renamed for TOP, or are unused altogether.  Thus,
+your directory for RAP may get rather cluttered.  Furthermore, making a new
+directly will help to prevent confusion as to which files belong to which
+version (RAP or TOP).  After reunpacking the archive, move onto the next step.
+
+    3) Copy the backups that you made in step 1 back to the TOP directory.  Be
+sure to keep the backups around in case problems arise.  Then rename USERS.RAP
+to USERS.TOP.  Also, if you are registered and have a RAP.KEY file, rename it
+to TOP.KEY.
+
+    4) Edit the included file TOP.CFG (yes, there finally is a configuration
+file!) to suit your own setup.  TOP.CFG is a plain ASCII file, and is fully
+"comment-documented".  You should make a backup of TOP.CFG and keep it around
+in case you make a mistake or want to refer back to it.
+
+    5) Edit the included file NODES.CFG to suit your node setup.  Like TOP.CFG,
+NODES.CFG is a plain ASCII file and is self-documented with comments.  You
+should also keep a backup of NODES.CFG around in case you ever need one.
+
+    6) From the same directory as USERS.TOP, run 2G1TO200.EXE.  This program
+will search for any personal actions which do not have the %m token in their
+singular and plural text and insert it at the front of the action, as well as
+change the action response to inform the user the action has been altered.  The
+requirement of the %m token is necessary because without %m, users can use
+personal actions to perform rather mean and nasty tricks on other users (eg.
+impersonation, fake system messages, etc.)  This requirement is hardcoded into
+TOP as well.
+
+    7) Create a subdirectory for the *.ASC, *.ANS, and *.AVT files to be kept
+in.  This is not required, but it keeps the TOP directory cleaner.  Next,
+unpack ALLANSI.ARJ into this directory.  Finally, be sure to update the
+TOPANSIPath setting in TOP.CFG so it uses the directory created in this step.
+
+    8) To upgrade your action file, type the following command into DOS:
+
+COPY __ACTHDR.TXT + ACTIONS.RAP MAIN.ACT
+
+    This will prefix your old action file (ACTIONS.RAP) with some new
+information that is required by TOP.  It will also rename the file to the
+proper convention.  The new file should look exactly like your old ACTIONS.RAP
+file with five new lines of information at the top, and no blank lines anywhere
+in the file.  After verifiying that MAIN.ACT was copied successfully, you
+can delete ACTIONS.RAP.  To complete the upgrade, enter this command into DOS:
+
+TOPACT MAIN
+
+    This will compile your new action file so that TOP can use it.  If TOPACT
+reports that the file did not compile successfully, retry this step.  If you
+still have problems, then review the section on "Actions" in TOP.DOC and see if
+you can correct the problem.  If that doesn't work, edit the "ActionFiles"
+setting in TOP.CFG so that no files are listed, and contact the author at your
+earliest opportunity.
+
+    9) If you wish, you can edit the files CHANNELS.CFG, BIOQUES.CFG, and
+CENSOR.CFG to your needs, although changing these files is not required to
+complete the upgrade.  These files are all ASCII files and comment-documented
+like TOP.CFG is.  If you edit these files, keep a backup of the originals!
+
+   10) Edit your existing BBS batch files to reflect these changes:
+        a) the new TOP directory instead of the old RAP one.
+        b) the TOP.EXE command line, which now only takes the node as a
+           parameter. If your system has a TASK environment variable that
+           contains the node number in decimal format, then you don't need the
+           node number on the command line (though it's recommended you put it
+           there anyhow).
+
+   11) If you are upgrading to the OS/2 version of TOP, copy the included file
+DRS2V5B3.DLL to any directory on your OS/2 LIBPATH.  The recommended location
+for this file is the \OS2\DLL directory on your OS/2 boot partition.  If you
+are upgrading to the Win95 version of TOP, copy the included ODOORS60.DLL to
+your Windows SYSTEM path.  You can delete the .DLL file from the TOP directory
+after copying it.
+
+  11a) If you are upgrading to TOP for Win95 you will also need to perform the
+steps described in TOPWIN95.DOC before proceeding.
+
+  11b) If you are upgrading to TOP for OS/2 and plan to use TOP's Maximus/2
+v3.0x support, please see MAXOS2V3.DOC before proceeding.
+
+   12) Give it a try!  Logon to your BBS and run TOP as any other user normally
+would.  This will ensure that your batch files work, and that the BBS will
+interact with TOP properly.
+
+   13) Be sure to read TOP.DOC for important information, including:
+        - Detailed information on features and configuration.
+        - How to contact the author to report problems/suggestions.
+
+    Thank you for trying TOP!

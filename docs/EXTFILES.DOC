@@ -1,0 +1,113 @@
+TOP v2.00g1 External Files - Listing & Description
+--------------------------------------------------
+
+    This is a listing of all the external files that can be used by TOP.  All
+of these files should be stored in the directory specified in the TOPANSIPath
+setting in TOP.CFG.  For an explanation of the naming and detection scheme used
+by TOP to find these files, please see TOP.DOC.
+
+Common Files
+------------
+
+    These files are used by TOP for the situations indicated.
+
+ FN Basename  Description
+
+  A COLHELP   Screen shown when a COLOURHELP command is issued.
+  A MINIHELP  Screen shown when a COMMANDS command is issued.  Should contain a
+              short list of commands and their uses.
+  A NEWUSER   Screen shown when a new user enters TOP.
+  A PERSHELP  Screen shown when a user requests help on editing Personal
+              Actions.  Should contain a list of % codes and an explanation of
+              the different elements of an action.
+  N TOPNEWS   Screen shown after a user enters TOP if the ShowNews setting is
+              turned on.  Useful for informing users about changes to TOP that
+              will affect them, or bugs to watch for.
+  N TOPTITLE  Screen shown as soon as a user enters TOP if the ShowTitle
+              setting is enabled.  Use this screen to show a title page or
+              welcoming message.
+
+Help Files
+----------
+
+    These files are used by TOP's online help system, which is normally
+triggered by a HELP command.  The command or topic listed beside each file
+indicates which command or topic the help file is for.
+
+ FN Basename  Command/Topic
+
+  I HELPACT0  ACTION
+  I HELPACT1  ACTION LIST
+  I HELPACT2  ACTION ON
+  I HELPACT3  ACTION OFF
+  I HELPACTS  ACTIONS (General help on actions.)
+  I HELPCHAN  CHANNELS (General help on channels.)
+  I HELPCHAT  CHAT
+  I HELPCHG0  CHANGE
+  I HELPCHG1  CHANGE HANDLE
+  I HELPCHG2  CHANGE EMESSAGE
+  I HELPCHG3  CHANGE XMESSAGE
+  I HELPCHG4  CHANGE SEX
+  I HELPCHG5  CHANGE CHATMODE
+  I HELPCHG6  CHANGE LISTED
+  I HELPCHLP  COLOURHELP
+  I HELPCLST  CONFLIST
+  I HELPCMDS  COMMANDS
+  I HELPDENY  DENYCHAT
+  I HELPJOIN  JOIN
+  I HELPLGOF  /LOGOFF
+  I HELPLKUP  LOOKUP
+  I HELPMOD0  MODERATOR
+  I HELPMOD1  MODERATOR SETTOPIC
+  I HELPMOD2  MODERATOR SETMOD
+  I HELPMOD3  MODERATOR BAN
+  I HELPMOD4  MODERATOR UNBAN
+  I HELPMOD5  MODERATOR INVITE
+  I HELPMOD6  MODERATOR UNINVITE
+  I HELPNODS  NODES
+  I HELPPAGE  PAGE
+  I HELPPROF  PROFILE
+  I HELPQUIT  QUIT
+  I HELPRMBR  REMEMBER
+  I HELPSYS0  SYSOP
+  I HELPSYS1  SYSOP CLEAR
+  I HELPSYS2  SYSOP TOSS
+  I HELPSYS3  SYSOP ZAP
+  I HELPSYS4  SYSOP SETSEC
+  I HELPTIME  TIME
+  I HELPULST  USERLIST
+  I HELPWHIS  WHISPER
+  I HELP_BIO  BIO
+  I HELP_DIR  DIRECT
+  I HELP_FGT  FORGET
+  I HELP_GA1  GA
+  I HELP_GA2  GA'S
+  I HELP_GEN  GENERAL (General help on TOP and chatting.)
+  I HELP_HLP  HELP
+  I HELP_TOP  TOPICS (List of non-command help topics.)
+  I HELP_WHO  WHO
+
+Extra Files
+-----------
+
+    The following files are included with TOP but are not specifically used by
+TOP.  They include replacements for the above files, and files used for action
+pictures.
+
+ FN Basename  Description
+
+ AR ALTNEW    Replacement for NEWUSER if you have AllowNewHandles set to OFF.
+ AP STOPPIC1  Used by the STOP action to demonstrate action pictures.
+ AP STOPPIC2  Used by the STOP <name> action to demonstrate action pictures.
+
+Footnotes (FN)
+--------------
+
+    The letter(s) in the FN column indicate the following:
+
+    A - *.ASC, *.ANS, and *.AVT versions are included with TOP.
+    I - *.ASC version only is included with TOP.
+    N - Not included with TOP.
+    P - Used as an action picture.
+    R - Replacements for a file listed elsewhere.
+

@@ -1,0 +1,2087 @@
+
+                              The Online Pub v2.00
+                              Sysop Documentation
+                                By Paul Sidorsky
+                       Manual Copyright 1995-1996 ISMWare
+
+                               =================
+                               Table Of Contents
+                               =================
+
+    Introduction
+    The History of TOP
+    Requirements
+    Version Differences
+    Installation
+    TOP Configuration
+    Node Configuration
+    Using a RAMDisk
+    Installing TOP in Your BBS
+    Command Line Parameters
+    Recovering from Crashes
+    Actions
+    Language File
+    Chat Channels and Moderators
+    User Biographies
+    The Profanity Censor
+    PubColour(TM) Codes
+    External Display Files
+    Sysop Function Keys
+    Errors & Errorlevels
+    Contacting the Author
+    Licence and Distribution
+    Registration
+    Future Plans
+    Acknowledgements
+
+                                  ============
+                                  Introduction
+                                  ============
+
+    The Online Pub, or TOP for short, is a full-featured multi-node
+teleconferencing program for most BBS software programs.  It features the
+line-by-line style of teleconference made popular by The Major BBS, and brings
+most of the features of Major BBS's chat (and many new ones!) to your existing
+BBS, without spending the fortune in software and hardware that Major BBS
+requires.
+
+    TOP has the ability to interface directly with several popular BBS
+programs, which allows users in TOP to page and see users who are not in TOP.
+Even if your BBS software is not one of the supported systems, you can still
+use TOP, but your users will not be able to see and page users on the BBS while
+in TOP.
+
+    TOP has a multitude of configuration options, which allow you the utmost
+control over how TOP behaves.  At the same time, though, TOP features a quick
+and easy setup.  You configure only as much as you want (or need) to, and can
+come back and customize TOP further when you wish.  This makes TOP a very
+powerful addition to your BBS.
+
+                               ==================
+                               The History of TOP
+                               ==================
+
+    This section is purely for the curious, and may be skipped.  Users of The
+RemoteAccess Pub (RAP) may find it particularly interesting, however.
+
+    The Online Pub was formerly known as The RemoteAccess Pub.  The name change
+came about because TOP supports several more BBS software programs, not just
+RemoteAccess, with more planned for the near future.  I thought having
+"RemoteAccess" in there would turn off sysops running other BBS programs, so
+the change was made.
+
+    The RemoteAccess Pub, or RAP for short, was originally written by Joe
+Lindstrom in 1991.  It was basically an expirimental project.  Joe wanted to
+see if he could duplicate the chat mode found in The Major BBS (which The
+Online Pub is still based on), so he did.  RAP caught on somewhat in the RA
+community, so Joe released several beta versions, and finally a public release.
+The last public release of "the old" RAP is 1.00b, and may still be available
+on some CD-ROM collections, not to mention on BBSs who's sysops don't clean out
+their file areas.  RAP 1.00b was written in QuickBASIC v4.5, supported 300
+users and 99 lines, 100 actions and talktypes, whispering, and interfacing with
+RemoteAccess (or RA for short) 1.11.
+
+    Fate took its toll on Joe, however.  He had a major HD crash which wiped
+out the source code for RAP.  While he kept promising new versions, none
+surfaced.  Eventually I realized Joe was never going to get around to it due to
+his studies and job, and since I had always been interested in doing a
+multi-line chat door based on Major BBS, in late 1993 I asked for his
+permission to restart the project.  He said yes.  Two months later, in early
+1994, The RemoteAccess Pub v1.80 was released.  It caught on even more than the
+original version did, so I released a few updates, ending most recently with
+RAP 1.82a.  The "reincarnation" of RAP was written in Borland C v3, used the
+OpenDoors door toolkit, supported as many users as your HD could hold, over
+3000 actions, whispering, general actions, and interfacing to RA v2.0x and
+Maximus v2.0x.  In addition, two add-ons for RAP were written by David Ong, a
+modem-friend of mine.  These add-ons are RAPLink, which allows RAP to link to
+any other teleconference, and BJ4RAP, a BlackJack game playable from RAP.
+
+    Once I had accumulated a multitude of ideas, and gotten a "feel" for the
+increasingly active multi-node chat community, I decided something big had to
+be done.  I first went so far as to rewrite RAP completely, but after that was
+done I realized that rewriting wasn't going to make me any better off.  After a
+HD crash of my own which wiped out the debugged prototype rewrite of RAP, I
+returned to the old code and started adding huge new features and reworking
+just about everything else.
+
+    The version of The Online Pub (or TOP for short) that you have here, 2.00,
+still uses much of the code from RAP v1.82a.  Though much of the code for TOP
+has been rewritten, the TOP-to-TOP communication is still the same, and the
+core of the program is still the same.  TOP supports all that RAP 1.82a does,
+plus an unlimited number of actions, online help, multiple channels,
+configurable display text, and more commands than I can possibly list.  The DOS
+version is still written in Borland C v3 using the OpenDoors door toolkit, and
+the OS/2 version is written in Borland C v2 for OS/2, using the Doors/2
+toolkit.
+
+    What was supposed to only take three months has now taken nearly two YEARS.
+I like to think that it was worth the wait, though.  TOP v2.00 has more
+features than any other multi-line chat door, is more customizable than most
+doors of any type, yet still remains simple to setup and use.  Amazingly
+enough, since this is only the first gamma version, there's still more to add,
+and more configurability to give you.
+
+    Anyhow, enough of a history lesson - onto the installation!
+
+                                  ============
+                                  Requirements
+                                  ============
+
+    Before beginning TOP's installation, take the time to make sure your system
+meets all of the requirements needed to run TOP.  You likely meet most of the
+requirements already, or you wouldn't have obtained TOP in the first place.
+For those that you don't meet, you'll probably only have to find one or two
+files from a local BBS to meet them.
+
+    It is assumed you know a significant amount about your operating system and
+how it works, as this is almost mandatory in setting up a multinode BBS.
+Hence, only terms that might be new are defined in this manual.  Terms in
+common usage are not defined.  Consult your operating system or hardware
+manuals if you need definitions for unfamiliar terms.
+
+    Hardware Requirements
+    ---------------------
+
+    - One or more 80286 compatible computers.  TOP for DOS only:  If you are
+      using an 8086 or 80186 computer, call the ISMWare Support BBS to pick up
+      a replacement copy of TOP.EXE that will work on these "old klunkers".
+
+    - One or more of the following:  modem, null-modem connection, LAN setup,
+      or LAN-compatible WAN setup.
+
+    - A monitor on at least a server computer, or a system that can be setup
+      remotely (i.e. over the modem).
+
+    Optional but recommended:
+
+    - A printer, to print out this manual, the registration form, or any other
+      files that you may need to refer to.
+
+    Software Requirements
+    ---------------------
+
+    - TOP for DOS:  MS-DOS 3.3 or 100% compatible operating system.
+
+    - TOP for DOS:  MS-DOS 3.3 100% compatible multitasking environment or LAN
+      system, such as DESQview.
+
+    - TOP for OS/2:  OS/2 2.0 or 100% compatible environment.
+
+    - TOP for Win95:  Windows 95, Windows NT 3.0, or 100% compatible
+      environment.
+
+    - Text editor to edit TOP's configuration files.  Several good ones are
+      available from local BBSs, or you can use MS-DOS's EDIT.EXE or OS/2's
+      E.EXE.  A configuration editor program is being developed and will be
+      released later to make the use of a text editor unnecessary.
+
+    - TOP for DOS:  At least 384K of free conventional RAM when TOP is to be
+      run.
+
+    Optional but recommended:
+
+    - Session-based multinode BBS program, such as RemoteAccess or Maximus.  It
+      may surprise you to learn that this is optional, but TOP can in fact be
+      run entirely without a BBS on LAN systems.  However, even on LAN-only
+      systems it is much easier to run TOP from inside a BBS.  A
+      "Session-based" BBS program is one that requires the main .EXE file to be
+      run more than once from different multitasker sessions or LAN stations.
+      This is in contrast to a "Multitasking" BBS program (such as Major BBS or
+      TBBS) which only needs to be run once, and handles multitasking itself.
+      The BBS program does not have to be for the same platform as the version
+      of TOP you wish to use, but there must be a way for the BBS program to
+      succefully spawn doors of TOP's platform.  For example, you can use TOP
+      for OS/2 with a DOS-based BBS, but only if you use the SIO driver, which
+      allows com-port sharing between OS/2 and DOS sessions.
+
+    - TOP for DOS:  FOSSIL driver.  A FOSSIL driver is a TSR program that
+      replaces and expands the BIOS communications functions.  FOSSIL drivers
+      offer such features as one-place locked port rates, buffering, and port
+      remapping.  Many DOS-based BBS software programs already require a FOSSIL
+      driver, so you probably already have one installed.  If you don't, you
+      should consider getting one and installing it if it is compatible with
+      your BBS software.  It makes TOP's communications faster and cleaner, and
+      also makes TOP easier to setup.  However, TOP does support direct-access
+      (non-FOSSIL) communications, so a FOSSIL is not required.
+
+    - RAMDisk program.  TOP works a lot faster if a RAMDisk can be provided.
+      See the section entitled "Using a RAMDisk" for more information on space
+      requirements and setup.
+
+                              ===================
+                              Version Differences
+                              ===================
+
+    This section describes the differences between TOP for DOS, TOP for
+OS/2, and TOP for Win95.  Should you ever wish to change operating platforms,
+keep in mind the details in this section.
+
+    For the most part, all three versions of TOP are identical.  The data
+files, action files, configuration files, and temporary communication files
+used are all identical.  In fact, you could even run one copy of TOP for DOS
+and one copy of TOP for OS/2 or Win95 at the same time and they would be able
+to communicate with each other!  However, this goes against the registered user
+licence, so please do not do this with registered copies of TOP.
+
+    The key difference between versions is that TOP for OS/2 and TOP for Win95
+require a Dynamic Link Library (DLL).  The file DRS2V5B3.DLL contains the
+communication and video routines that TOP for OS/2 requires.  This DLL may be
+shared with other programs that know how to use it, and can end up saving you
+disk space.  DRS2V5B3.DLL is provided in the distribution archive containing
+TOP for OS/2.  TOP for Win95 uses ODOORS60.DLL which has an identical function.
+
+    Both TOP for DOS and TOP for Win95 use the DOS version of the TOPACT.EXE
+compile.  The DOS version of the compiler is fully compatible with the Win95
+(and OS/2) version of TOP, which is to be expected since the versions of TOP
+are completely compatible.  TOP for OS/2 uses a native OS/2 compiler named
+TOPACT2.EXE.
+
+    TOP for OS/2 and TOP for Win95 also have a few additional command line
+switches for special situations.  See the section called "Command Line
+Parameters" for details.  The basic command line is the same as TOP for DOS's,
+however.
+
+    In summary, if you are changing platforms and thus changing versions of
+TOP, you do not have to do almost anything!  Simply unpack the .EXE file from
+the version of TOP you are changing to, and change your batch files to call it
+instead.  If you are changing to TOP for OS/2 or TOP for Win95, install the DLL
+as described below.  That is all that is needed!  Of course, you should always
+make backups (even for simple procedures like this), just in case something
+unexpected happens.
+
+    NOTE:  Because all three versions of TOP are almost completely identical,
+this manual uses several shortcuts for brevity.  For example, "TOP" on its own
+always refers to any version of TOP.  When versions differ, they are refered to
+specifically as either "TOP for <platform>" or TOP/DOS, TOP/2 (OS/2), or TOP/95
+(Win95).  Also, when discussing the .EXE file, TOP.EXE is always used, unless
+the discussion applies to a different version of TOP, in which case TOP2.EXE
+(OS/2) or TOPW.EXE (Win95) will be used.
+
+                                  ============
+                                  Installation
+                                  ============
+
+    The main installation procedure for TOP consists of four steps.  There are
+other steps that are not required to get TOP running, but which you may wish to
+go through to customize TOP or increase its performance.  Each of these steps
+is covered in its own section of this manual.  These sections appear following
+this section, which describes the mandatory installation procedures.
+
+    NOTE:  If you are upgrading from TOP v2.00g1, follow the instructions in
+UPGRADE.DOC instead of the ones in this section.  If you are upgrading from The
+RemoteAccess Pub v1.82, you should follow the instructions in RAPUPGR.DOC
+instead.
+
+    1) Unpack TOP into its own directory.  You've probably already done this,
+but if not, simply create a new directory for TOP and unpack the entire
+contents of the TOP archive (TOP?200.*) into this directory.
+
+    2) Configure TOP.  To do this, load the file TOP.CFG into an ordinary text
+editor and follow the instructions from top to bottom, changing what you
+want/need to change as you go.  Be sure to keep a backup of this file in case
+you make a mistake or want to refer back to it.  After you have edited the file
+to your liking, save the changes.  If you need more details, see the section of
+this manual entitled "TOP Configuration".
+
+    3) Configure the nodes.  To do this, load NODES.CFG into your text editor
+and follow the instructions.  Again, keep a backup around in case you need one.
+Save the changes when you are done.  For more details, check the section
+entitled "Node Configuration".
+
+    4) Add TOP to your BBS.  Follow the usual procedure you use to install a
+door in your BBS.  Normally this involves setting up a menu command to call a
+batch file, and then creating this batch file to call the door.  In your batch
+file, be sure to change to the directory that you made for TOP in step #1
+before running TOP.EXE.  Also, be sure that you pass the node number to your
+batch file and be sure that your batch file passes the node number to TOP.EXE
+as the first and only parameter on its command line.  See the sample batch file
+SAMPLE.BAT and/or the section "Installing TOP in Your BBS" for more details.
+NOTE:  If you are using TOP for OS/2, replace TOP.EXE with TOP2.EXE.  If you
+are using TOP for Win95, replace TOP.EXE with TOPW.EXE.
+
+    5) Unpack the external files.  Create a subdirectory for the *.ASC, *.ANS,
+and *.AVT files to be kept in.  This is not required, but it keeps the TOP
+directory cleaner.  Next, unpack the file ALLANSI.ARJ into the newly created
+subdirectory, or into the TOP directory if you don't want to use a
+subdirectory.  Finally, be sure to update the TOPANSIPath setting in TOP.CFG so
+it uses the directory created in this step.
+
+    6) Install the DLL (does not apply to TOP for DOS).  For TOP/2, copy the
+included file DRS2V5B3.DLL to any directory on your OS/2 LIBPATH.  The
+recommended location for this file is the \OS2\DLL directory on your OS/2 boot
+partition.  With TOP/95, copy ODOORS60.DLL to your Windows SYSTEM directory.
+You can delete the DLL from the TOP directory after copying it. NOTE:  If you
+already have a program which uses these DLLs, use the version of the DLL which
+has a later date.
+
+    There is of course more that can be configured, but at this point all of
+the mandatory configuration is complete and TOP is ready to go.  Consult the
+relevant sections of this manual when you want to try configuring some of TOP's
+more advanced features, like making your own actions and changing the language
+file.
+
+                               =================
+                               TOP Configuration
+                               =================
+
+    TOP has many configurable settings.  Some of these settings control vital
+system information and must be changed, while others let you tweak TOP's
+performance, turn features on/off, and change TOP's behaviour.
+
+    All settings are controlled from a file named TOP.CFG, which is ordinarily
+kept in the directory that TOP.EXE, TOP2.EXE, or TOPW.EXE is stored in.  This
+file is a simple ASCII text file that can be changed with a text editor,
+notepad program, or word processor in ASCII mode.  The file is line-based,
+which means that each element of the file is a line of text terminated by
+carriage return and linefeed characters.
+
+    The style used in TOP.CFG is fairly common among BBS doors, and will likely
+look familiar to most sysops.  In case you are not familiar with it, however,
+an explanation of the file is given below.
+
+    Each significant line in TOP.CFG has the format:
+
+<keyword> <setting>
+
+    <keyword> is a special tag that TOP looks for to determine which setting to
+change.  Think of it as the name of the setting in question.  <setting> is the
+data for the setting being changed.  This data may be numerical, string (text),
+a path, a toggle, or a mixture.  The data required varies for each setting.
+
+    Some example significant lines:
+
+MaxNodes        10
+TOPWorkPath     E:\
+UseActions      Yes
+
+    Insignificant lines are usually comments, which are ignored by TOP.
+Comments start with a semicolon (;) and may contain notes or explanations.
+Comments are never required.
+
+    Blank lines, lines beginning with a misspelled or unrecognized keyword, and
+lines with garbage are all ignored by TOP.  For this reason, be sure that you
+spell all of the keywords correctly or TOP may miss a setting and you can end
+up not realizing it for quite some time.  Worse yet, TOP may cause problems and
+cause your system to crash or behave oddly!
+
+    The file TOP.CFG, included in the TOP archive, contains a complete
+explanation for each setting.  In fact, it contains much feature-specific
+documentation that is not found in this manual.  The author apologizes if this
+is an inconvenience, but it was felt that a well-commented configuration file
+and a shortened manual would be adequate, as the author's time is limited.  A
+full manual will be included with the next major release of TOP.
+
+    For new installations, you should backup TOP.CFG file before attempting to
+edit it.  You should also keep the comments intact on your working file, so you
+have a reference to each setting's function and limits in the future.
+
+                               ==================
+                               Node Configuration
+                               ==================
+
+    In most (if not all) multinode BBS configurations, the details for each
+node are the most variable elements of the system.  Sometimes, the only
+differences are the comport number and drop file locations, while in other
+cases, even the system paths may not be consistent for all nodes.  It is for
+this reason that TOP provides many different options for configuring each node.
+
+    The setup for each node is contained in a file called NODES.CFG.  This file
+is virtually identical in format to TOP.CFG, which is described in the previous
+section.  The main difference is that NODES.CFG contains multiple "blocks" of
+configuration information.  Each setting applies to the node that is being
+configured within the block the setting appears in.  Settings can (and usually
+must) appear multiple times (once in each block), instead of just once in the
+whole file.
+
+    The easiest and fastest way to configure the nodes on your system is to
+first create a configuration "block" for one node.  Next, use your text
+editor's cut-and-paste features to duplicate that block as many times as needed
+(i.e. once for each node on your system).  Finally, edit the settings that need
+changing for each individual node "block", including the node number, log name,
+and comport information.  Usually, most settings will be similar throughout the
+system, so only minor changes will be needed for each "block".
+
+    An example node configuration, as well as a description of each available
+node setting, is contained in the file NODES.CFG.  It is recommended that you
+backup this file before editing it.  Since there are several different classes
+of node configurations (remote node with FOSSIL, remote node without FOSSIL,
+local node, etc.), having a backup will make your job easier should you ever
+add more nodes to your system or change your system configuration.
+
+    If you follow the guidelines given in this section, even a system with a
+very large number of nodes can be configured in a reasonably short amount of
+time.  Unless you have an extremely unusual system configuration, the basic
+setup for most nodes will be identical, so the amount of editing is kept to a
+minimum.
+
+                                ===============
+                                Using a RAMDisk
+                                ===============
+
+    TOP's performance can be greatly enhanced by using a RAMDisk (also known as
+a virtual disk or RAMDrive).  A RAMDisk is basically the same as a hard or
+floppy disk, except that it uses RAM as the storage medium.  The major penalty
+when using a RAMDisk is of course that it consumes RAM.  Unfortunately, most
+DOS RAMDisk programs use conventional RAM, although there are a few that can
+use EMS/XMS.  Under OS/2 and Win95 this is not so much of a concern, although
+if you are running on a system with low memory you may notice more swapping
+when using a RAMDisk.
+
+    In return for the RAM, however, the speed advantage of a RAMDisk is
+enormous.  The access time for a typical hard disk is about 11 milliseconds
+(0.001 s).  In comparison, the typical access time for RAM is 70 _nanoseconds_
+(0.000000070 s).  This is why RAMDisks net such fast performance.  It is also
+why hardware cache RAM and programs like SMARTDRV are so effective for boosting
+hard disk performance.
+
+    TOP performs an extremely heavy amount of file I/O operations.  This can
+put a lot of strain on a system.  As you might expect, because RAMDisks have
+such superior performance, there is a lot less strain on a system when a
+RAMDisk is used with TOP.  Furthermore, your hard disk is freed up for other
+things, like running doors or accessing the message bases for other nodes.
+
+    A RAMDisk is very highly recommended for all system configurations and for
+all versions of TOP.  This includes LAN systems.  Though it can be difficult to
+setup a RAMDisk on a LAN system, if your users like to chat a lot it can save a
+lot of system strain.  Because TOP does not support direct network
+communication (i.e. IPX/SPX), this is the fastest way to run TOP on your
+system.
+
+    If you are installing a RAMDisk specifically to accomodate TOP, you can
+calculate the space requirements from the information given below.  If you are
+expanding an existing RAMDisk, the information below will also be useful so you
+know how much to expand it by.  Note that TOP creates a lot of files, so it
+might be advisable to give TOP a seperate RAMDisk, or make a directory on the
+RAMDisk for TOP to store its files in.  You can ensure a directory is always
+available by putting a command like "MKDIR E:\TOPWORK" in your TOP batch file,
+just before TOP.EXE, TOP2.EXE, or TOPW.EXE runs.
+
+    RAMDisk Space Requirements for TOP
+    ----------------------------------
+
+    It is imperative that TOP not run out of space on the RAMDisk, or various
+problems will arise.  These problems can including missed conversation, the
+inability to use certain features, or even system crashes.
+
+    The recommended MINIMUM amount of RAMDisk space is 16K per node, plus a 16K
+buffer zone.  So, for example, if you run an 8 line system, you should give at
+least 144K to the RAMDisk.  If you can give more space to the RAMDisk, then by
+all means do so.
+
+    TOP requires this RAMDisk space for several reasons.  One is that on busy
+systems, the conversation can consist of many messages being sent at one time.
+Another, more important reason, is that users may be reading help files,
+editing their profile, chatting privately, etc.  In some areas, this causes
+messages to get "backed up" until the user returns.  TOP also stores frequently
+accessed files, like who's inside TOP, on the RAMDisk for quick access.
+
+    If you find you are running out of RAMDisk space and have no more RAM to
+spare, change the TOP Work Path to point to a seperate directory on the hard
+disk with the biggest hardware cache and the fastest access time (choose in
+that order if they are not the same drive).  Loading SMARTDRV or another
+caching program should boost performance significantly.  If possible, give the
+cache program at least as much memory as you would give a RAMDisk.  Finally, be
+sure to change the Performance Tuning options in TOP.CFG to better suit a
+non-RAMDisk situation.
+
+                           ==========================
+                           Installing TOP in Your BBS
+                           ==========================
+
+    The final step required to install TOP is to make your BBS aware of TOP so
+your users can access it via the menus on your system.
+
+    Unfortunately, door installation procedures vary drastically for each BBS
+type, so only some general guidelines can be given.  If you are not familiar
+with installing doors in your BBS, you should refer to the manual for your BBS
+software before proceeding.  If you are experienced at installing doors, you
+will have no trouble installing TOP, as it installs just like any other door.
+
+    The recommended way to run TOP from your BBS is to call a batch file from
+your BBS menus.  This batch file must have the current node (or task) number
+available to it somehow.  If your BBS can pass the current node number on door
+command lines, then set your BBS up to pass the node number to TOP's batch
+file.  If your BBS cannot do this then you will have to modify your BBS batch
+files to set an environment variable with the current number (i.e. set TASK=x).
+Some BBS software programs require this anyhow, so you may not have to do
+anything.
+
+    A sample batch file is provided below.  This sample batch file assumes that
+the node number is being passed on the command line.  It also assumes that the
+BBS directory is D:\BBS, and the TOP directory is D:\BBS\DOORS\TOP.  Finally,
+it assumes that each node on the BBS has its own working directory,
+D:\BBS\LINEx (where x is the node number).
+
+@echo off
+d:
+cd \bbs\doors\top
+top %1
+d:
+cd \bbs\line%1
+
+    This sample batch file will work on most systems with only path and drive
+modifications.  It will also work on systems that use a TASK environment
+variable to control the node number.  Simply change all occurences of "%1" to
+"%TASK%", where TASK is the name of the environment variable that holds the
+node number.
+
+    If your BBS software cannot call batch files, or if a batch file setup is
+not desirable, you can call TOP.EXE, TOP2.EXE, or TOPW.EXE directly from your
+BBS.  Simply call TOP.EXE or TOP2.EXE with the node number on the command line.
+For TOP to run, the NODES.CFG file _must_ be in the same directory that TOP.EXE
+or TOP2.EXE is in.
+
+    TOP's BBS Interfacing Support
+    -----------------------------
+
+    TOP has the ability to interface with certain BBS programs so that your
+users can see who's on the BBS outside of TOP, page users not in TOP, and
+receive pages from other users not in TOP.  These BBS programs are RemoteAccess
+2.xx, Maximus 2.0x and 3.0x, and SuperBBS 1.1x.  Note that TOP will work
+perfectly well with almost any BBS, even if it interfacing with that BBS is not
+supported by TOP.
+
+    To enable BBS interfacing support, first set the BBSType keyboard in
+TOP.CFG to one of the settings listed in the file.  Next, set the BBSPath and
+BBSIPCPath keywords as described below for your particular BBS program:
+
+    BBS Type         BBSPath setting             BBSIPCPath setting
+
+    RemoteAccess     System Path (USERON.BBS)    Semaphore Path (NODE*.RA)
+    Maximus          --- Not Needed ---          IPC Path (IPC*.BBS)
+    SuperBBS         System Path (SUSERON.BBS)   Temporary Path (TOLINE*)
+    Maximus/2 v3.0x  --- Not Needed ---          MCP Pipe setting from MAX.CTL
+
+    NOTE:  Actual names, as referred to by the BBS programs and documentation,
+may not be the same as the ones listed here.  The filenames needed by TOP are
+provided to aid in the determination of what path to use.
+
+    Once you have set these keywords as described here and in TOP.CFG, perform
+tests to make sure BBS interfacing is functioning properly.  Use two nodes, one
+inside TOP and one in your BBS menus.  Use the NODES command inside TOP to make
+sure TOP can see the user in the BBS menus.  Use your BBS's Who's Online?
+command to make sure the BBS can see the use inside TOP.  Finally, try paging
+between the nodes to make sure TOP and the BBS can communicate.  If any of
+these features do not work, check your setup again.
+
+                            =======================
+                            Command Line Parameters
+                            =======================
+
+    TOP.EXE has a simple command line (which will no doubt come as a relief to
+former RAP users).  The command line syntax is given below in conventional
+command line syntax.  If you are unfamilliar with this format then read the
+descriptions that follow as they will explain the syntax.
+
+TOP[.EXE] <node> [/PORT] [/NICE|/NASTY] [/HANDLE:<handle>]
+
+    TOP (or TOP2 for TOP/2 or TOPW for TOP/95) is the program name.  The .EXE
+        extension is optional.
+    <node> is the node number that TOP is being run on.
+
+    NOTE:  The command line switches below apply only to TOP for OS/2.  TOP for
+DOS and TOP for Win95 will ignore these switches.
+
+    /PORT   Indicates that you run a system that passes a comport number in its
+            drop file(s), not a port handle.  Please consult your BBS software
+            documentation for details.  As a general rule, if TOP doesn't seem
+            to work properly for remote callers, this switch should be added
+            (or removed if it is already there).
+    /NICE   Tells TOP to run in "Nice" mode.  TOP will be generous with the
+            CPU, allowing other nodes and other applications to run faster and
+            less choppy.  If you use this switch and it does not seem to affect
+            TOP's performance, then you might also want to change some of the
+            Performance Tuning settings in TOP.CFG, which will allow your
+            system to run even faster.
+    /NASTY  Tells TOP to run in "Nasty" mode.  TOP will be much more selfish
+            about CPU usage, and will likely take away time from other
+            applications.  NOTE:  If TOP is running slowly for you, first try
+            changing some of the Performance Tuning settings in TOP.CFG.  If
+            these do not help, then try this switch.
+
+    If neither /NICE nor /NASTY is specified, TOP will operate in "Normal"
+mode.  "Normal" mode is basically a balance between "Nice" and "Nasty" modes,
+and will be suitable for nearly all systems.
+
+    NOTE:  The command line switch below applies only to TOP for Win95.  TOP
+for DOS and TOP for OS/2 will ignore this switch.
+
+    /HANDLE:xxxx    Specifies a "live" comport handle that TOP should use, in
+                    decimal form.  Note that there is no space between /HANDLE:
+                    and the actual handle, and the colon is required.
+
+    TOP also provides a crude mechanism to delete a user or change a user's
+security to maximum, which can be used until the more sophisticated TOPConfig
+editor is released.  To do this, run TOP like this:
+
+TOP EDIT
+
+    Follow the prompts to perform the desired action.  After deleting a user,
+you should run TOP to pack the user file, like this:
+
+TOP PACK
+
+    This will remove the record(s) of the deleted user(s), reducing the size of
+the USERS.TOP file.
+
+                            =======================
+                            Recovering from Crashes
+                            =======================
+
+    In the unlikely event that TOP crashes your system, or that your system
+crashes (for example, due to a hardware problem) or is rebooted while TOP is
+being used, there are steps you may need to take to get TOP operating properly.
+TOP is very flexible with regard to crashes, so you may not have to do anything
+at all, but you should still be familiar with the recovery procedure.
+
+    To aid automatic recovery from crashes, set as many nodes as possible in
+NODES.CFG to "Solid" type.  "Solid" nodes do not need to be "reset" after a
+crash, because it is assumed that no other session will try to start that node.
+BBS setups will likely have all nodes as solid, because the sessions using each
+node are constant.  See NODES.CFG if you need more information.
+
+    The only abnormality that you will see after a crash if you use all or
+mostly "Solid" nodes is that the user(s) who were online at the time of the
+crash will still appear to be online, until somebody else enters TOP on the
+affected node(s).  This is not a disabling problem, but it may confuse your
+users if they see somebody online who isn't responding.  If Crash Protection is
+running on your system (see TOP.CFG), TOP will automatically detect this
+situation and rectify it within a short time.
+
+    If Crash Protection is not running, or if you experience problems after
+crashing, you will still need to reset TOP after a crash.  Fortunately, this is
+very easy to do.  Make sure no nodes are using TOP at the time, and then simply
+delete all off the .TCH files (*.TCH) from your TOPWorkPath.  If this does not
+fix the problems, then some of TOP's other files, such as the user and action
+files, may have been corrupted as well.  A USERLIST command can check on a user
+file problem, and you can fix action file problems by simply recompiling them
+with TOPACT (see the section on "Actions" for more on this).  At the very
+worst, you will have to delete your TOP user file, but this is an extremely
+rare case.
+
+    You can automate the deletion of *.TCH files from a batch file.  However,
+this batch file should only run when no other users are in TOP.  TOP does not
+create any semaphore files (for speed, and to avoid cluttering an already full
+work path), so you will likely only be able to run this batch file when no
+other users are on the BBS at all.  There is one exception to this:  If your
+system does not ask for user response when it encounters a file sharing error,
+you could conceivably run this batch file very often on your system.  If a user
+is inside TOP, the deletion will simply fail and your system will carry on.  If
+no users are in TOP, the files will be deleted.  It will have the further
+advantage of keeping the work path clean, which can be important on systems
+using a RAMDisk.  However, this procedure is only recommended if you are
+extremely familiar with your system's operations.
+
+                                    =======
+                                    Actions
+                                    =======
+
+    This section explains what actions are and how to edit, change, and delete
+them.
+
+    Overview
+    --------
+
+    One of the most popular features of teleconferncing programs is the ability
+to use "actions".  Actions are commands that cause descriptions of what the
+user wants to be seen doing to be sent to other users.  For example, the "grin"
+action would display something like this to other users:
+
+John Doe is grinning from ear to ear.
+
+    This is called the "singular usage" of the action, because the action is
+used with no other parameters.
+
+    Actions can also be "done to" people.  For example, typing "slap joe" would
+display something like this:
+
+John Doe just slapped Joe Blow in the face!
+
+    This is called the "plural usage" of an action.  Aside from the fact the
+action is not used on its own (i.e. with the person's name as a parameter),
+actions "done to" somebody will appear differently depending on if the person
+viewing the action is who the action is being done to.  So, in the above
+example, Joe Blow would see his name replaced with the word "you", while
+everybody else would see the text shown above.  Because actions used this way
+can appear differently to different people, the usage is called the "plural
+usage" of the action.
+
+    Actions can also be done to "all", which replaces the name of the
+"receiving" user with the word "everyone".
+
+    Furthermore, actions can be done "secretly" to a user by putting the word
+"secretly" after the receiver's name.  Actions done "secretly" to somebody will
+_only_ be seen by the receiver (and the sender if the user action has echoing
+turned on).  Secret actions, as they are called, are typically used if
+something whispered to somebody warrants an action, or to signal if something
+mischevious is going on (for example, a secret wink to another user).
+
+    There is another type of action, called a talktype, that allow users to
+"say" text in different ways.  Used on their own, talktypes work just like
+regular actions.  Used with other text, the text is displayed with a prefix as
+to how the user is saying it.  As an example, "yell STOP THAT WHINING!" would
+display something like this:
+
+From John Doe, at the top of his lungs: STOP THAT WHINING!
+
+    The final type of action is a general action (also known as a generic
+action, or GA for short).  Although general actions do not need to be
+configured by the sysop, an explanation of what they are is included here for
+completeness.
+
+    General actions work mainly like regular actions, with one big difference:
+general actions are made up by users as they are needed.  This allows a user to
+create an action for a special circumstance.  While this may sound complicated,
+it is in fact very easy to do.
+
+    To create a general action, all a user has to do is type the command "ga",
+followed by a space and then the action text.  When the text is sent to
+everybody, the "ga" command is replaced with the user's name.  So, if a user
+named "John Doe" typed "ga just threw his old 2400bps modem in the trash!",
+everybody would see:
+
+John Doe just threw his old 2400bps modem in the trash!
+
+    There is also a second form of general action that allows the user to
+express things posessively.  This type is generated with the "ga's" command.
+This form is purely for cosmetic purposes, and functions exactly the same as a
+regular general action in that the "ga" part is replaced with the user's name.
+As an example, typing "ga's stupid older brother is bugging him!" would display
+text that looks something like this:
+
+John Doe's stupid older brother is bugging him!
+
+    By this time you've probably thought of many uses for actions.  If so, keep
+reading to learn how to create your own and modify the existing actions.
+Remember, even if you're running TOP in a very professional environment,
+actions can still be useful.  They can break the ice for virtual business
+meetings, allow people to "vent" when things get tense, or just allow people to
+have fun.  However, if you really do not want actions to be available to your
+users, you can turn them off in TOP.CFG.
+
+    Action Lists
+    ------------
+
+    Actions of both types are contained in one or more action list(s).  Action
+lists can (and should) contain both normal actions and talktypes.  TOP supports
+over 100 action lists, and these lists can contain as many actions as you have
+conventional memory for (several thousand in TOP/DOS, virtually unlimited in
+TOP/2 and TOP/95).  Each action list has its own name, as well as optional
+security and channel restrictions.
+
+    The main point of action lists is to categorize (and if necessary,
+restrict) different types of actions.  You should not feel compelled to
+seperate both types of actions (normal and talktypes).  Unless you have a very
+large amount of talktypes, it is more advisable to group actions by theme
+instead of type.  This makes it easier for users in the long run.  Although
+users may at first be confused by the different types of actions, eventually
+they will want to be able to quickly get a list of actions that suit a
+particular situation in the conversation.  If you want some suggestions on how
+to use action lists, keep reading.
+
+    Each action list is identified by a short name.  The name of the action
+list corresponds to the base file name of the TOP action (.TAC) file that the
+list is stored in.  This name is shown to users when they request a list of all
+of the action lists available to them, and is used to view the actions
+contained in the list.  Each action list also has a description, which is
+longer, and generally summarizes what kind of actions are in the list (general,
+adult, Star Trek, etc.).  The description is shown when a list of all action
+lists is requested, as well as on the header when actions are viewed.
+
+    To create an action list, begin a new action list file in your text editor.
+You can name this file anything you like, although it is recommended that the
+extension of the file be ".ACT", as this is the extension the TOPACT compiler
+(described later) expects.  Furthermore, it is also suggested that the name of
+the file be the same as the intended name of the action list.  For example, if
+you want to have an action list named "VIOLENT" (for violent actions), you
+should name the action list file VIOLENT.ACT.
+
+    TOP comes with two action list files to get you started.  MAIN.ACT is the
+main action file, and contains over 200 actions for users to use.  SYSOP.ACT
+contains a few actions just for sysops, and is intended to help illustrate the
+usage of multiple action lists.  You can edit the actions in either file, and
+add new ones if you like.  Until you become familliar with actions, having all
+of them in MAIN.ACT should be sufficient.
+
+    The action list (.ACT) file is an ASCII text file that can be edited with a
+text editor.  Unlike the .CFG files used by TOP, .ACT files are fixed-format
+files.  This means that each line must contain the information expected by the
+TOPACT compiler or unpredictable results will occur.  No comments or blank
+lines are allowed in .ACT files.
+
+    Each .ACT file consists of a five line configuration section, followed by a
+virtually unlimited number of five line action definitions.  The configuration
+section is described here, and the action definitions, which are considerably
+more complex, are described after.
+
+    The five line configuration section of an .ACT file has the following
+format:
+
+Line 1 - List description.  This is the description that is described above,
+         and is basically the "long name" of the action list.
+
+Line 2 - Minimum security level needed to use actions in the list.  This can be
+         a number from 0 to 65535, or it can be the following mnemonic:
+
+         MINSECURITY - Minimum supported security level.  Equivalent to 0.
+
+Line 3 - Maximum security level allowed to use actions in the list.  This can
+         also be a number from 0 to 65535.  Alternatively, you can use the
+         following mnemonic:
+
+         MAXSECURITY - Maximum supported security level.  Equivalent to 65535.
+
+         To restrict an action list to only one security level, set line 2 and
+         line 3 to the same value.
+
+Line 4 - Minimum channel number that the actions in the list can be used in. It
+         can be a value from 1 to 4294967294.  You will need to read the
+         section on "Channel Definitions" to learn about what types of channels
+         TOP supports, as well as how TOP assigns channel numbers.  This
+         information will be needed if you want to restrict action usage to
+         certain conferences or personal channels.  If you aren't planning to
+         get fancy, just keep this setting from 1 to 3999999999, or use one of
+         the following mnemonics:
+
+         MINCHANNEL    - Minimum supported channel.  Equivalent to 1.
+         MINPUBLIC     - Minimum supported public (regular) channel.  Also
+                         equivalent to 1.
+         MINPERSONAL   - Minimum internally supported personal channel number.
+                         Equivalent to 4000000000.
+         MINCONFERENCE - Minimum internally supported conference channel
+                         number.  Equivalent to 4001000000.
+
+Line 5 - Maximum channel number that the actions in the list can be used in.
+         Again, see the "Channel Definitions" section for more details.  This
+         can also be a value from 1 to 4294967294.  Better yet, use one of
+         these mnemonics:
+
+         MAXCHANNEL    - Maximum supported channel.  Equivalent to 4294967294.
+         MAXPUBLIC     - Maximum supported public (regular) channel.
+                         Equivalent to 3999999999.
+         MAXPERSONAL   - Maximum internally supported personal channel number.
+                         This is equivalent to 4000999999, although the actual
+                         maximum personal channel number that will ever be used
+                         is 4000032767 as TOP only supports nodes up to 32767.
+         MAXCONFERNECE - Maximum internally supported conference channel
+                         number.  Equivalent to 4294967294.
+
+         To restrict an action list to one particular channel, set line 4 and
+         line 5 to the same value.  To restrict an action list to a certain
+         type of channel, use the corresponding MIN and MAX mnemonics.  It is
+         recommended that you always use the mnemonics if restricting list
+         usage to a certain type of channel.
+
+    Note that each mnemonic is only valid for the line that it is listed under.
+Only the first six letters of each mnemonic is significant, so you can buse
+abbreviations such as "MINSEC" or "MAXCONF" if you like.  Also, case is not
+significant, which means "MINSECURITY", "MinSecurity", and "minsecurity" all
+work the same.
+
+    Action Definitions
+    ------------------
+
+    Following the configuration information in an .ACT file is the data for
+each individual action.  This data is called an "action definition".  Each
+action definition is five lines long, and there can be as many definitions in
+each action list as are needed.  The five lines of data for each action
+definition are described below:
+
+Line 1 - Action type.  This can be either "NORMAL" or "TALKTYPE".  See the
+         Overview at the start of this section of the manual for a description
+         of the action types available.  Only the first three letters are
+         important (i.e. "NOR" and "TAL" also work), and case is not important
+         (i.e. "NORMAL", "Normal", and "normal" are all the same).
+
+         NOTE:  You can actually use this line for a short comment if you need
+         to.  Just put the comment after the "NOR" or "TAL" setting, and the
+         TOPACT compiler will ignore it.
+
+Line 2 - Action verb.  This is the command word used to "express" the action.
+         It should be short and to the point, and summarize what the action
+         does.  Examples are "kick", "slap", "hug", "grin", "yell", and
+         "handshake".  Also, it should not conflict with any of the command
+         words and aliases in the language file.  Action verbs are
+         case-insensitive, although using capitals are recommended to easily
+         distinguish the verbs from the other action text (described below)
+         when editing.  Action verbs can be up to ten characters long.
+
+Line 3 - Response text.  This text is sent to the user who issued the action
+         verb.  It is usually a somewhat humourous comment confirming that the
+         action is sent, which can be vital (to a user's understanding of
+         actions at least) if a user has action echoing turned off.  Setting
+         this line to "N/A" will cause no response text to be sent.  PubColour
+         codes (which are described in the "PubColour Codes" section of this
+         manual) are allowed to change colours in the response text. Action
+         tokens (which are described below) are _not_ allowed here!
+
+Line 4 - Singular usage text.  As described above, the singular usage of an
+         action occurs when just the action verb is entered by the user.  The
+         text on this line is sent to all users when an action is used
+         singularly.  It can include PubColour codes, as well as some of the
+         action tokens described below.  Setting this line to "N/A" will
+         disallow singular usage of the action, useful for actions that don't
+         make sense unless they are "done to" somebody.
+
+Line 5 - Plural usage text.  Sent when an action is "done to" somebody, as
+         described above.  The text on this line is sent to all users.  It can
+         include PubColour codes, as well as any of the action tokens described
+         below.  Setting this line to "N/A" will disallow plural usage of the
+         action.  This is useful when an action won't make sense if it is "done
+         to" somebody.
+
+    As mentioned, some lines can use special "action tokens" which are replaced
+with information that varies depending on who sent the action and who's
+receiving it.  These tokens are described below.  For all tokens, case of the
+letters is unimportant.  Do not confuse these with language tokens, which are
+described in the "Language File" section.  Language tokens can _not_ be used in
+actions.
+
+    Both lines 4 and 5 can use any of the following five tokens:
+
+    %m      "Me" token.  This is replaced with the name of the user who sent
+            the action.
+
+    %h      "His/Her" token.  It will be replaced with either "his" or "her",
+            depending on the gender of the user who sent the action.
+
+    %f      "Self" token.  Replaced with either "himeself" or "herself",
+            depending on the gender of the user who sent the action.
+
+    %e      "He/She" token.  This token is replaced with either "he" or "she",
+            again depending on who sent the action.
+
+    %p      "Picture" token.  This token is special in two ways.  The first is
+            that it takes extra information, in the form of a base file name
+            (no extension).  When TOP encounters this token, it will display
+            instead an external file with the base name given and an extension
+            based on the user's terminal.  It looks for this file in the TOP
+            ANSI Path.  For example, if "%pROSE" is given, and the user has
+            ANSI enabled would display the file called ROSE.ANS.
+
+            The second way that this token is special is that it, along with
+            the file name, can be THE ONLY THING APPEARING ON THE LINE THAT IT
+            IS USED ON!  You cannot use any other text, colour codes, or action
+            tokens.  The %p must begin in the first column of the line.
+
+            External files used as action pictures may contain any of the
+            action tokens listed here, with the exception of %p (in other
+            words, pictures cannot be nested).  They can contain PubColour
+            codes, or codes for their corresponding terminal (i.e. .ANS files
+            can contain ANSI codes, .AVT files AVATAR codes, and .RIP files
+            RIP codes).  For an example of action picture usage, see the "STOP"
+            action in the MAIN.ACT file that is included with TOP, as well as
+            the files STOPPIC1.* and STOPPIC2.*.
+
+    Line 5 of an action definition can also use these two tokens in addition to
+the ones listed above:
+
+    %y      "You" token.  Replaced with the name of the user an action is "done
+            to" for everybody except that user.  The user who is having the
+            action "done to" them will see "you" instead of his or her name.
+
+    %s      "Posessive" token.  This is replaced with either "'s" (an
+            apostrophe followed by the letter s) for user(s) who are _not_
+            having the action "done to" them.  For the user who the action _is_
+            being done to, this will replaced with "r" (the letter r).
+
+            Obviously, this token does not make sense when used on its own.  It
+            is designed to be used immediately following a "You" token.  In
+            other words, always use "%y%s" if you want to use this token.  This
+            allows the user who the action is being "done to" to see "your",
+            while others will see that user's name followed by "'s", as in
+            "John Doe's".  There are several examples of how this token is used
+            in the language files that are included with TOP.
+
+    As mentioned, five line action definitions can be repeated indefinitely
+throughout an action list file, so long as no spaces or comments are used
+(though you can use line 1 of each definition to hold a comment if needed - see
+above for details).  A sample action definition looks like this:
+
+NORMAL
+BOOT
+Whap!  Boot to the head!
+%m just laced up %h boots!
+%m is booting %y to the head!
+
+    If you are still confused at this point, have a look at the MAIN.ACT file
+which came with TOP.  You might want to print a section of it out and refer to
+it while trying the actions inside TOP itself.  This will allow you to see how
+action tokens are replaced with text and get a feel for how actions work in
+general.
+
+    The TOPACT.EXE Compiler
+    -----------------------
+
+    After you have made any change to an action list file, you must process
+that file through the TOPACT action compiler (TOPACT.EXE).  The TOPACT compiler
+counts the actions in a file and scans the file for common errors.  Most
+importantly, it also compiles the file into a binary data format that is a lot
+more efficient for TOP to access.
+
+    Processing an action list with the TOPACT compiler is simple enough.
+Simply run TOPACT.EXE with the name of the action list on the command line.
+For example, to process the MAIN.ACT file that is included with TOP, issue this
+command in DOS or OS/2:
+
+TOPACT MAIN
+
+    This is all that is needed.  TOPACT will append the .ACT extension, and
+then read that file.  It will output the compiled actions to a TOP action
+(.TAC) file with the same base name at the .ACT file and an extension of .TAC,
+in this case MAIN.TAC.
+
+    TOPACT allows you to specify an output file name as well as use extensions
+other than the default ones.  To see how to do this, simply run TOPACT.EXE with
+nothing on the command line and it will show you the full command line syntax.
+
+    IMPORTANT:  TOPACT.EXE CANNOT BE RUN WHEN TOP IS IN USE!  TOPACT will abort
+with an error if this is attempted.  It may also corrupt the compiled action
+file, rendering actions in that list useless if anybody else enters TOP before
+the file is recompiled properly.
+
+    Here is a typical output generated by the TOPACT compiler.  Actual output
+may vary.
+
+TOPACT - Action Compiler for TOP 2.00.
+
+--- BEGIN COMPILE ---
+Opening MAIN.ACT...Done!
+Opening MAIN.TAC...WARNING!
+File already exists!  Making backup...Done!
+Backed up to MAIN.BAK.
+Opening MAIN.TAC...Done!
+--- PASS 1 ---
+Getting configuration information...Done!
+Name: "Main Action List"  MinSec: 0  MaxSec = 65535
+MinChan: 1  MaxChan: 4294967294
+Counting actions...  230...Done!
+Writing configuration information...Done!
+--- PASS 2 ---
+Skipping configuration information (not needed on second pass)...Done!
+Reading actions...  230...Done!
+--- COMPILE COMPLETED ---
+
+    As you can see, the compilation is broken down into three sections.  The
+first section opens the files and makes a backup if needed.  The second section
+is the first "pass".  TOPACT scans (or "passes over", hence "pass") the action
+list file on the first pass, obtaining the configuration information and
+counting the number of actions.  It then writes this information to the TOP
+action file.  The final section is the second "pass" by the compiler.  In the
+second pass, TOPACT reads the actual actions, converts them to a more efficient
+binary format, and writes them to the TOP action file.
+
+    During the compilation process, TOPACT may report an unexpected condition
+in the form of either a warning message or an error message.  Anytime one of
+these messages is issued, the location where the message occured will stay on
+screen so you can handle the message.  These messages are self-explanatory and
+will not be discussed in much detail.
+
+    Warning messages occur when TOP encounters unexpected circumstances but can
+compensate.  TOPACT will take a predetermined action (informing you what it is
+in the process) and then continue compiling.  Be sure to check on the part of
+the action list file that generated the warning message and resulting action in
+case TOP's compensation does not have the exact results that you intended.
+
+    Error messages occur when TOPACT encounters a problem that requires
+immediate attention.  TOPACT will abort the compilation process immediately if
+an error is encountered.  Errors include all file access problems.  Correct the
+problem (by checking that filenames are correct, disk space is sufficient, and
+that TOP is not being used), and then try again.
+
+                                 =============
+                                 Language File
+                                 =============
+
+    Perhaps the most impressive feature of TOP its language file system.  This
+allows you to change not just selected text and/or colours like most programs,
+but EVERY SINGLE CHARACTER, COLOUR, AND COMMAND WORD THAT TOP USES!  (With the
+exception of the opening and closing credits, but even those can be shortened
+with configuration settings.)
+
+    All of this configuration is done via the TOP language file.  Language
+files have the extension of .LNG.  TOP comes with several different language
+files with different "themes", and if that's still not enough for you then you
+can edit your own.  You can also translate one of the themes into a different
+language if your users' main language is not English.
+
+    The main language file, DEFAULT.LNG, contains a detailed description of how
+the language file works.  As such, this section will not attempt to describe
+the elements of language files or how they should be edited.  Instead, it will
+give you some tips and guidelines for editing language files and on getting TOP
+exactly how you wanted to look.
+
+    It is suggested that you don't try to edit the language file until you are
+very familiar with how TOP works.  This includes being familiar with TOP's
+appearance, all of TOP's commands, and the PubColour codes described later in
+this manual.  The language file controls and uses all of these features, and
+changing the language file without knowing what you are doing can drastically
+affect how TOP looks and acts, including rendering TOP unreadable or even
+unusable.
+
+    You can prevent all the above from happening by keeping a backup of the
+language file that you are working on.  When you first start out, all of the
+language files are "backed up" in the TOP archive, assuming you have not
+deleted.  So, if you are a person who likes to tinker around, you can do so
+safely.  Just be sure to restore from your backups if things don't work as you
+intended!
+
+    You are encouraged to make minor adjustments or corrections to the
+language file that you are using.  These adjustments are not very difficult and
+will help you get a feel for how language files work.  Some possible
+adjustments include changing some colours or words to suit your BBS or personal
+taste.  When you make the adjustments, be sure to test them so you know the
+adjustments will appear how you want them to.
+
+    Before you try to perform a full-blown revision of a language file, take a
+look at all of the different language files included with TOP and see how they
+relate to each other.  This will help to give you a good idea of what to change
+and what to leave.  It will also give you a reference in case you make a
+mistake and can't restore from a backup because you've already made a lot of
+changes.
+
+    NOTE:  When editing the command names, be sure to update the appropriate
+external help files (HELP*.* in the TOPANSIPath) to use the new command names,
+or users may get confused!  Alternatively, provide the original command names
+as aliases so the help files will still be valid.
+
+    Creating a completely revised language file, as well as the external
+screens that go with it, can take between 1-4 hours, depending on the
+complexity of the revision.  However, it only has to be done once, and can
+really make your BBS stand out.  Also, remember that it does not have to be
+done all at once.  You can run TOP with one of the included language files
+while you work on your custom file.  When your new one is finally ready, you
+simply change the setting in TOP.CFG.
+
+    Finally, be sure to remember that this section probably sounds more serious
+than it really needs to be.  Editing a language file isn't hard, and can
+actually be fun!  So long as you aren't afraid of your text editor and have
+some time on your hands, you should have no problem changing language files to
+meet your own needs.
+
+                          ============================
+                          Chat Channels and Moderators
+                          ============================
+
+    TOP supports over four billion (4,000,000,000) virtual chat channels.  Why
+so many?  For the simple reason that it could be done!  The author does not
+believe in imposing limits just for the sake of limiting something.  Besides,
+users might find it fun to use a channel with the same number as their BBS
+phone number (great advertising!) or other such things.  Remember that channel
+numbers are just for identification; you'll never actually get four billion
+channels in use at once.  You can only have as many channels in use at once as
+you have nodes.
+
+    Channels can be controlled via a configuration file named CHANNELS.CFG.
+Here you can define conferences and/or fixed-topic and aliased regular
+channels.  As with the other TOP configuration files, the CHANNELS.CFG provided
+in the TOP archive is fully commented and self-explanatory so it will not be
+covered here.  This section will instead provide you with a background on how
+TOP's channels and moderator functions work.
+
+    There are three types of channels supported by TOP.  Regular (or "numeric")
+channels are channels that are referred to by number.  These are the most
+"stable" channels in TOP because they can never change in number like the other
+two channel types, which are described below.  TOP supports four billion (minus
+one) numeric channels, numbered from 1 to 3999999999.  You can also assign
+aliases and fixed topics to these channels if desired.  One of these channels
+is also set as the "default" channel, which is the channel that all users
+automatically join when they enter TOP, as well as the channel that users
+return to if they are ever kicked out of another channel.  These are also the
+channels you'll most want to likely isolate the usage of certain actions to
+since they are the easiest to do so.
+
+    The second type of channel is a personal channel.  Each user logged into
+TOP has a personal channel available to them, and these channels have the same
+name as the user who controls them.  These channels also have numbers which are
+used internally by TOP.  Just add four billion to the node number that the user
+is logged into, for example, 4000000003 for the user on node 3.  Of course,
+your users will never have to know this, but the information is provided in
+case you as a sysop need it.  Obviously, you won't be able to predict which
+user will be on which node, unless you have a rare setup, so the internal
+number of each user's personal channel will change with each login.
+
+    The third and final type of channel is a conference channel.  Conference
+channels are special channels which have no number (at least to users), and
+they are always referred to by name.  You can use conferences as areas for
+certain topics of debate.  They have the same general function as named
+channels in IRC, or the SIG (/name) channels in Major BBS.  It is suggested you
+use a conference channel instead of a regular channel for fixed-topic rooms,
+even though both are virtually identical, because conference channels were
+designed for this purpose.  For example, conferences are always displayed in
+TOP as names, where as regular channels are always displayed as numbers.  This
+makes it easier for users to relate to the topic.
+
+    Internal node numbers for conferences are easy to track.  The first
+conference defined in CHANNELS.CFG has the number 4001000000 (four billion, one
+million), and each subsequent channel has that number increased by one.  This
+is helpful to know in case you want to restrict an action list to a certain
+conference, as conference names are not supported by the TOPACT compiler.  TOP
+supports over 200 million conference definitions (in addition to the four
+billion regular channel spaces), so don't be afraid to make lots of them!
+
+    There are also two special channels used by TOP.  The first is channel
+number 0.  This channel is used internally by TOP as a generic broadcast
+channel that are nodes are always "joined" to.  Users with sysop access may
+change to channel 0 and send messages on it if they need to be heard by
+everybody inside TOP.  This is useful for sending announcements or warnings to
+all users.  Note that users who are in private chats won't receive messages on
+channel 0 while in chat - you'll have to page them seperately to tell them
+what's going on.  Also note that channel 0 is treated as an unlisted channel
+(see CHANNELS.CFG for more details).  NOTE:  Channel 0 is not supported as well
+as other TOP channels and should be used with care.
+
+    The second internal channel is the last channel, 4294967295.  This channel
+is used when nodes are "busy" (in the profile editor, in private chat, etc.) to
+block the chat, but still allow messages sent on channel 0 to get through.  You
+will never need to worry about this channel, and it cannot be joined by any
+user directly.  It is only joined automatically by TOP before a user goes
+"busy", and unjoined automatically just after.
+
+    Each channel can have one or more moderators.  Moderators are people who
+"keep the peace" as well as encourage conversation.  Usually, moderators are
+sysops or cosysops, but you can give moderator powers to anybody you like.  All
+users with Sysop access have moderator powers in every channel (except the main
+channel, which has no moderator).  In addition, each user always has moderator
+powers in their own personal channel.  If this worries you, keep in mind that
+a jerky user who abuses moderator powers will quickly alienate other users, who
+will refuse to join that user's channel and chat somewhere else instead.
+
+    Moderators can change the topic and control which users can access the
+channel.  In addition, moderators can change or assign new moderators.  Each
+channel can have one designated moderator, as well as "generic" moderators who
+have moderator power due to their access level or because the channel is their
+own personal channel.  Generic moderators never lose their moderator powers in
+a given channel, but designated moderators can lose their moderator powers if
+they or a generic moderator changes the moderator to somebody else.
+
+    To control access to channels, moderators have the power to ban or invite
+users.  Which power they have depends on the channel that they are in.  Regular
+channels and conferences are called "open channels", because any user can join
+the channel without prior invitation.  Users can only be blocked from the
+channel if they are banned by a moderator.  Personal channels are called
+"closed channels" because users can only join the channel if they have been
+invited (given permission) to join the channel.
+
+    TOP uses what is called the Channel Management Interface (CMI) to track the
+moderator, topic, and ban/invite list for each channel.  This is all done
+internally.  The main thing you need to know about the CMI is that it uses the
+CHANIDX.TCH file in the TOPWorkPath to work from.  If TOP behaves oddly with
+regard to channels and reports the inability to join or unjoin channels
+properly, deleting this file will likely fix the problem.
+
+    If TOP stored information for every channel that was ever used by TOP, the
+CHANIDX.TCH file could swell up to several megabytes very fast, especially on a
+busy system with lots of nodes.  To prevent this, the CMI uses an "immediate
+interest" system to control the channels.  Basically, what this means is that
+once a channel is free of users, the CMI will render it "dead" and delete the
+information.  This setup should work well most of the time.
+
+    On a popular system, channels will be well used and even relied upon, so it
+is important that you as a sysop understand how they work.  You are encouraged
+to create as many conferences as needed (or requested by your users) to make
+chatting more enjoyable, and more organized.  A system with a lot of
+special-interest conferences can attract more users!  Just remember, you have
+about 200 million conference definition spaces available to you, so you'll
+never run out!
+
+                                ================
+                                User Biographies
+                                ================
+
+    TOP's biography features allows users to enter personal information for
+others to view.  The information the users enter is determined by you or
+another sysop, and may include string (text) or numeric responses.  All
+responses have configurable minimums and maximums which control which responses
+are valid.
+
+    The instructions for configuring the biography questions are included in
+BIOQUES.CFG.  After the questions have been setup, the biography is a fairly
+automatic feature.  While it is used extremely often by users on most systems,
+it requires very little maintenance after the initial setup procedure.
+
+    The biography feature uses two permanent data files which are kept in your
+TOP Path.  These files are BIORESP.TOP, which contains the actual response text
+for the biography questions, and BIOIDX.TOP, which contains an index of the
+data in BIORESP.TOP so TOP can retrieve it more efficiently.  TOP is very
+dependant on the index in BIOIDX.TOP and it cannot be rebuilt if it is lost.
+
+    The user biography replaces the "description" field in previous versions of
+TOP and RAP.  A LOOKUP command will now show a user's entire biography.  The
+_full_name_ of the user must be specified; abbrevations are not supported.  The
+new USERLIST command will show a complete list of user names, as well as the
+information for biography question #99.  This question should be used to hold a
+summary or description of each user.
+
+    All that is left to say about the biography feature is to have fun with it!
+Like everything else in TOP, it may be completely configured to your liking.
+If you wish, you can also force users to fill out their biographies before
+chatting with the ForceBio setting in TOP.CFG, although this setting should be
+used with care.  You may wish to use it if you are upgrading from TOP v2.00g1
+or from RAP, as it will draw users' attention to the biography feature and
+establish a quick foundation of completed biographies for users to see.
+Whatever you do, be sure that the questions you put in the biography reflect
+the information your users will actually want to know about each other.  The
+biography can be one of the most relied-upon features of TOP by your users, so
+you want to make sure it won't let them down!
+
+                              ====================
+                              The Profanity Censor
+                              ====================
+
+    It is inevitable that your users will start to say things that aren't
+suitable for your system.  When this happens, TOP's profanity censor gives you
+sophisticated control over what users can and can't say.  The profanity censor
+features six different levels of severity settings, allowing TOP to do things
+from merely warning a user to disconnecting them immediately.
+
+    The operation of the profanity censor is outlined in CENSOR.CFG, so this
+section will focus on some suggestions for how to use it.  Please read the
+information in CENSOR.CFG before continuing on so you are familiar with the
+concept of severity levels, word replacement text, etc.  The profanity censor
+can be very complex if you do not know how to use it, but it can be extremely
+powerful if you do.  Some users might even think it's a bit _too_ powerful!
+
+    The main reason for the elaborateness of the profanity censor is that what
+is considered offensive is such a highly subjective term.  The matter is
+complicated further by the fact that you have many other people to consider
+when deciding what is offensive, not just yourself.  Most likely, you'll want
+to keep a certain level of decency on your system while not inhibiting your
+users so much that they feel like they can't say anything.
+
+    The censor's six levels are designed to let you have as much control as
+possible over offensive words.  Four of the levels are also sub-grouped into
+two tolerance classes that allow TOP to become less tolerant of frequently used
+terms, and more tolerant as time between usage passes.  Each tolerance class
+has a warning count and a timer for each user associated with it, which can be
+used to increase the penalty for users who continue to use offensive terms.
+
+    The two tolerance classes are as follows:
+
+    Low (levels 5 & 4) - Low-level offensive words.  Normally used for crude or
+vulgar terms that are not very offensive but still not appropriate.
+
+    High (levels 3 & 2) - High-level offensive words.  Normally used for very
+coarse or graphic terms, racist remarks, etc.
+
+    NOTE:  Levels 6 and 1 do not require tolerance classes, as their actions
+are direct and unconditional.
+
+    When a user enters a sentence that contains an offensive term in one of the
+above classes, TOP will issue a warning, and add one to the user's warning
+total for that class.  If, after a level 4 or level 2 term is issued, TOP will
+check the user's warning total for the appropriate class (low or high,
+respectively) against the MaxCensorWarnLow or MaxCensorWarnHigh settings in
+TOP.CFG, and will disconnect the user if warning total is too high.
+
+    The censor timers (which are controlled using the CensorTimerLow and
+CensorTimerHigh settings in TOP.CFG) allow TOP to subtract warnings from the
+user's totals after a certain time has elapsed.  This allows TOP to let the
+occasional use of an offensive term slip without a severe penalty (i.e.
+disconnection).  The timer is reset upon each use of a word in the class for
+that timer, and when the allowed time has elapsed and a warning has been
+removed from the user's total.  Please note that the timers and warning totals
+for the two classes are SEPERATE, that is the offensive terms in one class will
+never affect the timer and total in the other.
+
+    Here is an example:  If the timer is set to 300 seconds (five minutes) and
+a user with two warnings enters another offensive term of the same class within
+300 seconds of the last offensive term being typed, the user will then have
+three warnings.  In order for all of the warnings to be removed, the user must
+now go 900 seconds (15 minutes) without entering an offensive term of the same
+class.
+
+    Recommended uses for each of the six severity levels are given below, along
+with examples to illustrate their use.  Levels are listed in order of
+increasing severity.  A more complete description of what each severity level
+actually does is given in CENSOR.CFG, so you can refer to it while you
+configure offending terms.
+
+    NOTE:  The examples given below are "clean", non-offensive examples.  For
+examples with actual offensive terms, see CENSOR.CFG.  Except for the level 6
+example, examples do not use TOP's "replace text" feature, i.e. the third line
+of the CENSOR.CFG entry is blank.  Comments within the examples appear in
+brackets [].
+
+    6 - Replace only, take no other action.  Use this when you have terms that
+you wish TOP to replace with different text without penalizing the user.  For
+example:
+
+[CENSOR.CFG:]
+6
+2.00g1
+2.00
+
+[The user types:]
+The most recent version of TOP is v2.00g1.
+
+[TOP sends to all:]
+The most recent version of TOP is v2.00.
+
+    5 - Allow term, warn user.  This setting is recommended for words which are
+more inappropriate than anything else.  The user will be warned about the
+word's usage, and one warning will be added to the user's low-level warning
+count.  TOP will then send the text as normal.  For example:
+
+[CENSOR.CFG:]
+5
+darn
+
+
+[The user types:]
+The darn thing isn't working!
+
+[TOP responds to the user:]
+Please avoid future use of the word "darn".
+
+[TOP sends to all:]
+The darn thing isn't working!
+
+    4 - Allow term, warn user & check warnings.  This setting is recommended
+for mildly crude or vulgar terms.  The user will be warned, one warning will be
+added to the low-level warning count, and the warning count will be checked
+against MaxCensorWarnLow in TOP.CFG.  If the count is equal or greater, the
+user will be disconnected, otherwise the text will be sent.  For example:
+
+[CENSOR.CFG:]
+4
+argh
+
+
+[The user types:]
+Argh!  I did it wrong!
+
+[TOP responds to the user:]
+Please avoid future use of the word "argh".
+
+[If the user's low-level warning count is too high, TOP responds, then
+disconnects the user:]
+Sorry, you are getting too vulgar!  Please call back when you clean up your
+act.
+NO CARRIER
+
+[Otherwise, TOP sends to all:]
+Argh!  I did it wrong!
+
+    3 - Don't allow term, warn user.  This setting is recommended for more
+offensive vulgarities.  The user will be warned, one warning will be added to
+the user's high-level warning total, and the sentence will not be sent.  For
+example:
+
+[CENSOR.CFG:]
+3
+silly
+
+
+[The user types:]
+This topic is silly!
+
+[TOP responds to the user:]
+Please avoid future use of the word "silly".
+Please retype what you wish to say without using that word.
+
+[Nothing is sent.]
+
+    2 - Don't allow term, warn user & check warnings.  This setting is
+recommended for explicit, graphic, or mildly insulting terms and phrases.  The
+user will be warned, one warning will be added to the high-level warning total,
+and the total will be checked against MaxCensorWarnHigh.  If the total is
+greater to or above, the user will be disconnected, otherwise the text will not
+be sent.  For example:
+
+[CENSOR.CFG:]
+2
+awful
+
+
+[The user types:]
+What an awful development.
+
+[TOP responds to the user:]
+Please avoid future user of the word "awful".
+Please retype what you wish to say without using that word.
+
+[If the user's high-level warning count is too high, TOP responds, then
+disconnects the user:]
+Sorry, you are getting too vulgar!  Please call back when you clean up your
+act.
+NO CARRIER
+
+[Nothing is sent.]
+
+    1 - Don't allow, disconnect immediately.  This setting is recommended for
+extremely offensive, gross, or insulting terms.  The author also recommends
+using the setting for all racist, sexist, and other such terms, as part of the
+effort to stamp out prejudice throughout the world.  The user will be
+disconnected immediately if one of these terms is detected, and nothing will of
+course be sent.  For example:
+
+[CENSOR.CFG:]
+1
+stupid
+
+
+[The user types:]
+This commercial is just plain stupid!
+
+[TOP responds to the user, then the user is disconnected:]
+Sorry, you cannot use the word "stupid" under any circumstances!
+Please call back when you clean up your act.
+NO CARRIER
+
+[Nothing is sent.]
+
+    Of course, how you want to use each of the severity levels of the censor is
+up to you.  Some systems with censors like TOPs use them for totally
+nonsensical or unexpected terms to have a bit of fun with the users.  However
+you decide to use the censor, please use it responsibly.  Try not to restrict
+the users too much, and let complaints from users be the signal to toughen
+language restrictions.  If you are too soft, users will not like your system
+because of all of the bad language being used.  If you are too harsh, users
+will feel as if they have to watch everything they say, which takes all of the
+fun out of chatting.  The censor timers can put a tight leash on users who get
+out of hand, while still allowing users to keep their own personality.  Take
+the time to fin the right balance.  Your users will thank you!
+
+    Finally, there are some important things that you should remember about
+TOP's censor.   First of all, it works on _all_ text entered by the user, not
+just the text entered during chat!  This includes the profile editor, pages,
+and personal actions.  NOTE:  One exception is with long (RA/SBBS) pages
+written with the full screen editor that are 256 characters long or more.  This
+is beyond the limit of the profanity censor.  Most pages will be under 256
+characters, so this limitation should not be too much of a problem.  The censor
+will also not work on incoming TOPLink text; it is up to the remote end(s) to
+censor their own users' input.  Also, the censor _WILL_ ignore PubColour codes,
+so users cannot get around the censor by imbedding a colour code in the middle
+of an offensive word.
+
+                              ===================
+                              PubColour(TM) Codes
+                              ===================
+
+    PubColour(TM) codes allow you, and your users, to change the colour of the
+text in TOP.  PubColour codes are used liberally throughout the language and
+action files, so as a sysop, your knowledge of them is imperative if you intend
+to make any changes to either of these types of files.
+
+    PubColour codes are easy to understand and use.  Their syntax is as
+follows:
+
+^x
+
+    Please note that ^ designates a caret character (Shift-6) and not a
+control-character.
+
+    x should be replaced with lowercase letters a through p, uppercase letters
+A through P, or another caret character.  Each letter corresponds to a
+different colour, with the lowercase letters corresponding to foreground (text)
+colour changes, and uppercase letters corresponding to background colour
+changes.  A chart of characters and colours can be found below, or in the
+seperate file PUBCOLOR.DOC.  It is suggested to print the chart out if you have
+a printer and use it as a reference when editing actions or language items.
+Furthermore, you should make the PUBCOLOR.DOC file available to your users so
+they can learn PubColour codes.  Although this same chart is also available in
+TOP's online help system, your users may be frustrated by having to keep asking
+for help all the time, and it may help them to have the chart "in easy reach".
+
+                          Chart of PubColour(TM) Codes
++------+-------------------------------+------+-------------------------------+
+| Code | Foreground Colour (Lowercase) | Code | Background Colour (Uppercase) |
++------+-------------------------------+------+-------------------------------+
+|  ^a  | Black                         |  ^A  | Black                         |
+|  ^b  | Blue                          |  ^B  | Blue                          |
+|  ^c  | Green                         |  ^C  | Green                         |
+|  ^d  | Cyan                          |  ^D  | Cyan                          |
+|  ^e  | Red                           |  ^E  | Red                           |
+|  ^f  | Magenta                       |  ^F  | Magenta                       |
+|  ^g  | Brown                         |  ^G  | Brown                         |
+|  ^h  | Light Grey                    |  ^H  | Grey                          |
+|  ^i  | Dark Grey                     |  ^I  | Black (with Flashing Text)    |
+|  ^j  | Light Blue                    |  ^J  | Blue (with Flashing Text)     |
+|  ^k  | Light Green                   |  ^K  | Green (with Flashing Text)    |
+|  ^l  | Light Cyan                    |  ^L  | Cyan (with Flashing Text)     |
+|  ^m  | Light Red                     |  ^M  | Red (with Flashing Text)      |
+|  ^n  | Light Magenta                 |  ^N  | Magenta (with Flashing Text)  |
+|  ^o  | Yellow                        |  ^O  | Brown (with Flashing Text)    |
+|  ^p  | White                         |  ^P  | Grey (with Flashing Text)     |
++------+-------------------------------+------+-------------------------------+
+|  ^^  | Displays a single ^ (caret) character.                               |
++------+----------------------------------------------------------------------+
+| NOTE:  On some systems, backgrounds with flashing text may appear as        |
+| high-intensity colour backgrounds without flashing text instead.            |
++-----------------------------------------------------------------------------+
+
+                             ======================
+                             External Display Files
+                             ======================
+
+    For large screens of information, TOP uses external display files (also
+called "ANSI files", after the most popular terminal type that uses them) as a
+source of the information.  These files are all contained in the directory
+specified by the TOPANSIPath setting in TOP.CFG, and are used mostly for help
+screens.
+
+    Each screen of information can use up to four seperate files, although only
+one is shown to the user.  Which file is used depends on the user's terminal
+setting (ASCII, ANSI, etc.)  The four files that can be used, and their
+corresponding external file extensions, are as follows:  ASCII (.ASC), ANSI
+(.ANS), .AVT (AVATAR), and .RIP (RIPScript).  Users of RemoteAccess and other
+similar BBS programs will find this usage familiar, and indeed this is what
+TOP's usage of these files is based on.  For those who are not familiar with
+this file extension usage, here is a short description:
+
+    TOP will search for the files by extension, in the order .RIP, .AVT, .ANS,
+and .ASC.  If a user does not support the given terminal type, or if the file
+with the given extension does not exist, TOP will move on to the next extension
+in the order.  All users are assumed to support ASCII (.ASC), so a .ASC file is
+required in all cases.  If an .ASC file is not found and TOP cannot satisfy the
+criteria for a different terminal (i.e. if the user doesn't support higher
+terminals or if the files for them do not exist), TOP will display nothing.
+Generally, you should have both .ANS and .ASC files present in your TOPANSIPath
+for sure.  If your BBS does not allow users to choose AVATAR codes, you can
+delete the provided .AVT files.  If you are proficient in RIP screen design,
+you may also wish to design graphical screens to go along with the text screens
+provided.
+
+    A set of sample files is provided in the TOP archive.  This set of files is
+used by all language files included with TOP, so unless you have highly
+specialized needs or are translating TOP to a different language, you won't
+need to change these files.  A list of all external files is contained in the
+file EXTFILES.DOC, which is included with TOP.
+
+    Lastly, remember that the files provided make sense with the default
+configuration of TOP only.  If you disable some features, or change some
+command names, some external files will likely need to be updated to reflect
+the changes.  Of course, external files never _need_ to be updated, but if you
+want to avoid confusing your users, you should update them.  BE SURE TO CHANGE
+ALL CROSS-REFERENCES WHEN EDITING!  A utility like GREP that can search
+multiple files for keywords quickly is extremely helpful for this purpose.
+
+    NOTE:  The files ALTNEW.* are replacements for NEWUSER.* and should be used
+if you turn off the "AllowNewHandles" option in TOP.CFG.  These are the only
+files that are provided for configurations other than the one provided in the
+TOP archive.
+
+                              ===================
+                              Sysop Function Keys
+                              ===================
+
+    When you are viewing a node running TOP from the local console (sysop end),
+you may use several keys to affect the user or system status.  These keys are
+described in this section.  NOTE:  If you are viewing the node through a remote
+DOS shell, you will need Doorway mode turned on in your terminal for these keys
+to work.
+
+    Alt-C       Engages a standard sysop-to-user chat interface.
+    Alt-D       Drops the user back to the BBS without hanging up.
+    Alt-H       Hangs up on the user and returns to the BBS.
+    Alt-J     - Jumps to DOS, suspending the user's display until you return.
+    Alt-K       Disables the user's ability to type text.  No warning is given!
+                Useful to fake a system crash to get rid of a problem user, or
+                to shut a user up if you need to type something in their
+                session without them interfering.
+    Alt-L     * Locks out the user by reducing their BBS security to 0 and
+                hangs up on them.
+    Alt-N     * Turns on the "Sysop Next" feature of some boards.
+    Up        * Increases user's time limit for this call by one minute.
+    Down      * Decreases user's time limit for this call by one minute.
+    F1 to F7  + Changes the information on the status bar.
+    F9        + Displays a summary of these keys.
+    F10       + Turns off the status line completely.
+
+    All other keys are sent as if the user had typed them.
+
+    Footnotes:
+
+    *   Change will only be preserved if the dropfile can be reread by the BBS
+        and if the BBS supports the feature.
+
+    +   Has no effect on Local or LAN node types.
+
+    -   Does not apply to TOP for OS/2 and TOP for Win95.
+
+                              ====================
+                              Errors & Errorlevels
+                              ====================
+
+    This section contains a list of errors and conditions that TOP will report
+when it exits. Each error has an associated errorlevel that TOP will return to
+the operating system when it exits to aid in automatic problem tracking.  A
+short list of errors and errorlevels is provided, followed by a detailed
+description of each error.
+
+    Quick List of Errors
+    --------------------
+
+    Exit Conditions
+
+      0     Normal exit (user typed QUIT).
+      1     User dropped carrier.
+      2     User's time has run out.
+      3     User has been inactive too long.
+      4     Sysop dropped user to BBS (Alt-D).
+      5     Sysop hung up on user (Alt-H).
+      6     Sysop tossed the user out of the Pub (SYSOP TOSS command).
+      7     Sysop zapped the user off of the system (SYSOP ZAP command).
+      8     User issued a quick logoff (/! or /LOGOFF) command.
+      9     User has run out of credits (RA 2.xx).
+     10     Censor tossed out user for language violations.
+
+    Startup Errors
+
+    100     Can't find or read node configuration for specified node.
+    101     Can't find a free node (LAN nodes).
+
+    Initialization Errors
+
+    200     Can't allocate enough memory to run.
+    201     Can't open files needed to run.
+    202     Can't load node configuration (NODES.CFG).
+    203     Can't load language file (*.LNG).
+    204     Can't load channel definitions (CHANNELS.CFG).
+    205     Can't load actions (*.TAC).
+    206     Can't compile personal actions (in memory) at startup.
+    207     SHARE.EXE not loaded/SHARE support not found.
+
+    Run-time Errors
+
+    220     Can't open file while running.
+    221     Can't read file while running.
+    222     Can't write to file while running.
+    223     Can't access file while running.
+    224     Can't close file while running.
+    230     Severe CMI error (can't join any channels).
+
+    Sharing Violations
+
+    250     Can't write to .TCH file(s) (usually due to sharing violations).
+    251     Can't open shared file (sharing violation error).
+
+    Door Errors
+
+    255     Critical door error (eg. no drop file, bad comport, etc.)
+
+    Error Descriptions
+    ------------------
+
+    #0   Normal Exit
+
+    This condition is reported whenever a user issues a QUIT command and TOP
+exits normally.
+
+    #1   User Dropped Carrier
+
+    This condition is reported whenever the connection is abruptly lost.
+Usually, this means the user has used the hang up feature of his or her
+terminal program, or that communication errors caused termination of the
+connection.  If you find that you are getting a lot of dropped carriers with
+many different users you should check your modem and hardware setup for
+problems.
+
+    #2   User's Time has Expired
+
+    When a user has used all of the allotted call time for his or her security
+level, TOP will exit with this condition.  If this happens frequently, check
+your BBS configuration to be sure that the proper time limits are set.  Also
+check the drop files to be sure TOP is receiving the proper time remaining for
+the user.
+
+    #3   User Inactive Too Long
+
+    This condition is reported when the user goes too long without typing
+anything.  The time allowed can be configured with the InactiveTimeout setting
+in TOP.CFG.  If you see a lot of these conditions you may wish to up the
+allowed time a bit, as in large chats it is not uncommon for several users to
+sit idle during a lull in the conversation.  Normally your users will let you
+know (i.e. complain) when this setting is too low.
+
+    #4   Sysop Dropped User to BBS
+
+    This condition is reported when a person at the local terminal (the one
+that runs the BBS) presses Alt-D to dump the user back to the BBS.
+
+    #5   Sysop Hung Up on User
+
+    This condition is reported when a person at the local terminal pressed
+Alt-H to disconnect the user.
+
+    #6   Sysop Tossed Out User
+
+    Similar to error #4, except that the sysop was inside TOP and issued a
+SYSOP TOSS command.
+
+    #7   Sysop Zapped User Off System
+
+    Similar to error #5, except that the sysop was inside TOP and issued a
+SYSOP ZAP command.
+
+    #8   User Used Quick Logoff
+
+    This condition is reported when a user issues a quick logoff (/! or
+/LOGOFF) command.
+
+    #9   User Ran Out of Credits
+
+    On RA 2.xx systems, this condition will be reported when TOP calculates
+that a user's credits have expired.  RA 2.xx makes the actual adjustment to the
+user's account, however, and may calculate differently than TOP.
+
+    #10  User Removed for Language Violations
+
+    This condition is reported whenever TOP's profanity censor disconnects a
+user.  Please see the section on "The Profanity Censor" for more details.
+
+    #100 Can't Find Node Configuration
+
+    This error occurs when a node number is specified that TOP cannot find a
+block in NODES.CFG for.  Check to make sure the node number is specified
+correctly on the command line and that a configuration block for the node
+exists in NODES.CFG.
+
+    #101 Can't Find a Free Node
+
+    This error is only reported on nodes of LAN type when TOP cannot find an
+unused node number in the range allowed.  Usually this will mean a
+configuration error with TOP.  If one cannot be found, try raising the MaxNodes
+setting in TOP.CFG.
+
+    #200 Can't Allocate Memory
+
+    This error is reported when TOP cannot allocate enough memory for its needs
+upon startup.  Make sure the BBS is providing TOP with enough memory.  In DOS
+systems you will almost definitely need the BBS's "Swap to Disk/EMS/XMS"
+feature turned on to provide TOP with enough memory to run.  TOP requires at
+least 384K of memory, but may need more depending on the number of nodes,
+personal actions, channel definitions, etc.
+
+    #201 Can't Open Files
+
+    This error is reported when TOP cannot open one or more files upon startup.
+Be sure all paths are correctly specified and that the RAMDisk is being created
+if one is being used.  Also try increasing the FILES setting in CONFIG.SYS.
+
+    #202 Can't Load Node Configuration
+
+    This error is reported when TOP is unable to read NODES.CFG.  This means
+that either the file is not in the same directory as TOP.EXE, or that there is
+an error in the file that makes the file not properly readable.  Check all
+paths and the configuration for each node.  Also check to make sure the file is
+not being used by another process.  For example, if you are editing NODES.CFG
+in some text editors they may lock the file until you exit the editor.
+
+    #203 Can't Load Language File
+
+    This error is reported when TOP cannot read the specified language (.LNG)
+file.  It normally means that there is not enough memory to read the file.
+Follow the suggestions listed for error #200.  It may also mean that the name
+of the file is improperly specified in TOP.CFG.  Make sure it has been spelled
+correctly, the file is in the TOP Path, and that the .LNG extension does _NOT_
+appear in TOP.CFG.
+
+    #204 Can't Load Channel Definitions
+
+    This error occurs when TOP is unable to read or process CHANNELS.CFG.  Make
+sure it is in the TOP Path and that the information in the file is correctly
+specified.
+
+    #205 Can't Load Action File(s)
+
+    This error is reported when TOP cannot find or load any of the action
+(.TAC) files specified in TOP.CFG.  Make sure the names are spelled correctly
+and that the .TAC extension does _NOT_ appear in TOP.CFG.  Also, make sure the
+files have been successfully compiled with the correct version of the
+TOPACT.EXE compiler.
+
+    #206 Can't Compile Personal Actions
+
+    This error is reported when TOP is unable to compile the user's personal
+actions.  This is done in memory when the user enters TOP.  This error likely
+means that there is a problem in the user file that has caused the user's
+personal actions to become improperly readable.  It may also mean there is not
+quite enough memory (i.e. you are about 2K-4K short) to finish the compile.
+
+    #207 SHARE Support Not Found
+
+    This error is only reported by TOP for DOS.  It occurs when TOP/DOS is
+unable to detect SHARE support in the operating environment.  This usually
+means SHARE.EXE or an equivalent program has not been loaded.  It may also mean
+that SHARE support has been turned off in the operating environment.  Check
+your configurations.
+
+    #220 Can't Open File While Running
+
+    This error is reported when TOP cannot open a file while it is running.
+Follow the same recommendations for error #201.
+
+    #221 Can't Read File While Running
+
+    This error is reported when TOP cannot read a file while it is running.
+Make sure you are not trying to edit the file or run a utility (such as TOPACT)
+while TOP is running.
+
+    #222 Can't Write to File While Running
+
+    This error is reported when TOP cannot write information to a file while it
+is running.  It likely means you are out of disk storage space.  Also check the
+recommendations for error #221.
+
+    #223 Can't Access File While Running
+
+    This error is reported when TOP cannot move about within a file while it is
+running.  It may mean you are out of disk space.  It may also be one of the
+problems discussed for error #221.
+
+    #224 Can't Close File While Running
+
+    This error is extremely rare, and likely indiciates a problem with how your
+system is setup.  It may occur if a node has crashed or if the conditions for
+error #221 are true.
+
+    #250 Can't Write to Temporary Chat (.TCH) File
+
+    This error is reported when a user presses Esc after receiving the message
+"TOP is having a problem accessing a file".  If this error occurs, change the
+performance tuning settings in TOP.CFG to be less stressful on your system.
+
+    #251 Can't Open Shared File
+
+    This error occurs when TOP cannot open a shared file, such as the files
+used for TOP-to-BBS communication.  Check to make sure the BBS paths are
+correct and that nothing but the BBS is trying to access the file.
+
+    #255 Critical Door Error
+
+    This error occurs at startup when the door driver for TOP cannot properly
+initialize.  The exact cause of the problem will be reported on the screen when
+TOP exits with this condition.  Check all paths and settings.
+
+    Other Errors
+    ------------
+
+    There are some other non-critical errors that may occur while TOP is
+running.  Nearly all of these errors will be logged to the log file, so be sure
+to check each log file from time to time.  Your users are instructed to report
+these errors to you so you may also find out about them that way, if your users
+are cooperative.
+
+                             =====================
+                             Contacting the Author
+                             =====================
+
+    If you have any suggestions, comments, or bug reports regarding TOP, please
+contact the author personally by one of the following means:
+
+    FidoNet Netmail: 1:134/31 (address to Paul Sidorsky)
+    Internet Email : << NONE AT THIS TIME >>
+    BBS            : (403)686-0449 (Press L at the Main Menu)
+
+    NOTE:  The author regrets that he is currently unable to maintain an
+Internet email address due to a lack of funds.  The author hopes to get an
+email address back as soon as possible.
+
+    PLEASE DO NOT CONTACT THE AUTHOR BY VOICE WITHOUT PRIOR PERMISSION!  It is
+disruptive to his family and to his mother's home business.  If you wish to
+talk voice, please use one of the above means to contact the author first.
+
+    New versions of TOP and other TOP-related files can be obtained from the
+ISMWare Support BBS at (403)686-0449, or by FidoNet File Request (freq) from
+1:134/31 (freq FILES for a current list of files).  Access to the BBS is free
+and granted on your first call.
+
+                            ========================
+                            Licence and Distribution
+                            ========================
+
+    Usage Licence and Distribution Restrictions are contained in the file
+LICENCE.DOC.
+
+                                  ============
+                                  Registration
+                                  ============
+
+    TOP is not free.  It is shareware, which means you can try it before you
+buy it.  It is not crippled or disabled in any way whatsoever, however you
+still are legally bound to pay for it if you use it for more than 60 days.
+
+    Complete information on registering TOP can be found in the file
+REGISTER.DOC.  Registered users of RA Pub (RAP) can find upgrade information in
+that file as well.
+
+                                  ============
+                                  Future Plans
+                                  ============
+
+    This will be the last major release of TOP for a fairly long time (probably
+a year at least).  While minor releases may follow this one, their purpose will be
+solely to correct bugs.  No new features will be added.
+
+    The next major version of TOP (v3.00) will be a massive new release,
+implementing some planned minor features that weren't ready in time for v2.00,
+and some HUGE new features.  TOP v3.00 will also feature professional-quality
+sysop utlities such as an install program and a configuration editor, as well a
+complete sysop's manual for every feature of TOP.
+
+    Some of the new features planned for TOP v3.00 are:
+
+    - IPX/SPX/NetBIOS communication support for faster communication on
+LAN-running systems.
+
+    - OS/2 Pipe communications support for faster communication on OS/2
+systems.
+
+    - Completely configurable action (%) tokens.
+
+    - Conference name support in the TOPACT compiler.
+
+    - More tolerant CMI so ban or invite lists can be preserved even when no
+users are in a channel.
+
+    - Support for more BBS programs, including WildCat! and Concord.
+
+    - Complete editing package to make TOP configuration and management easier.
+
+    - Online editors, and the ability to use sysop commands across channels.
+
+    - Conversion programs that would allow TOP's biography to access user
+information in several leading matchmaker doors.
+
+    - Much more which is too radical to be given away at this time.
+
+                                ================
+                                Acknowledgements
+                                ================
+
+    Credits
+    -------
+
+    The author of TOP wishes to thank the following people for their
+involvement in the development of TOP:
+
+    - The TOP v2.00 beta team and their users, consisting of Mike Cattle, Alan
+Whitenton, Mark Pontarollo, Laz Gottli, Jeff de Sarno, and Joel Ricketts.  Also
+thanks to Marc Hodgins, Will Wright, Tom Engle, and Paul Tricoli, who were part
+of the beta team at one time but for various reasons couldn't stick through to
+the end.
+    - David Ong, who wrote the original RAPLink and BJ4RAP programs and turned
+them over to me when he didn't have time to work on them himself, and who
+chatted with me for hours, continuously spotting bugs as we talked.
+    - Joe Lindstrom, who wrote the original version of The RemoteAccess Pub,
+and allowed me to pick up the project when he was no longer able to.
+    - All of those who applied for the beta team but were turned down.  The
+interest was appreciated nonetheless!
+    - All of those who registered RAP and offered suggestions for new features.
+It is you people that have continuously driven me to work on TOP and make it
+better.
+    - My parents for providing me with the resources to write this program.
+
+    Trademark Acknowledgements
+    --------------------------
+
+    The Online Pub, TOP, The RemoteAccess Pub, RAP, PubColour, and ISMWare are
+all trademarks of Paul Sidorsky.
+
+    All other trademarks are the property of their respective owners.  The use
+of these trademarks in this manual and in the program is strictly for reference
+purposes and is not intended to infringe upon the rights of the trademark
+owners.
+
